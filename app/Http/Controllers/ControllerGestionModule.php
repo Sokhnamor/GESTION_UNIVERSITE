@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 class ControllerGestionModule extends Controller
 {
-    public function bass()
+    public function diop()
     {
         return view('gestionModule');
     }
