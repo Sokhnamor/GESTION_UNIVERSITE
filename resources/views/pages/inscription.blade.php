@@ -38,8 +38,8 @@
 
 <body class="font-display">
 
-  <form method="POST" action="{{ route('connexion.submit') }}">
-    @csrf
+  <form method="POST" action="{{ route('inscription.submit') }}">
+     @csrf
 
     <div class="relative flex h-auto min-h-screen w-full flex-col items-center justify-center bg-background-light dark:bg-background-dark group/design-root overflow-x-hidden p-4 sm:p-6" style='font-family: Inter, "Noto Sans", sans-serif;'>
       <div class="layout-container flex h-full grow flex-col w-full max-w-md">
@@ -55,7 +55,27 @@
 
             <div class="flex flex-col gap-4 px-4 py-3">
               <label class="flex flex-col w-full">
-                <p class="text-[#0d121b] dark:text-white/80 text-base font-medium leading-normal pb-2">Nom d'utilisateur ou email</p>
+                <p class="text-[#0d121b] dark:text-white/80 text-base font-medium leading-normal pb-2">Nom d'utilisateur</p>
+                <input
+                  name="login"
+                  class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#0d121b] dark:text-white focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-[#cfd7e7] dark:border-white/20 bg-[#f8f9fc] dark:bg-white/5 focus:border-primary h-14 placeholder:text-[#4c669a] dark:placeholder:text-white/40 p-[15px] text-base font-normal leading-normal"
+                  placeholder="Entrez votre nom d'utilisateur ou email"
+                  value=""
+                />
+              </label>
+
+              <label class="flex flex-col w-full">
+                <p class="text-[#0d121b] dark:text-white/80 text-base font-medium leading-normal pb-2">Prenom d'utilisateur</p>
+                <input
+                  name="login"
+                  class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#0d121b] dark:text-white focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-[#cfd7e7] dark:border-white/20 bg-[#f8f9fc] dark:bg-white/5 focus:border-primary h-14 placeholder:text-[#4c669a] dark:placeholder:text-white/40 p-[15px] text-base font-normal leading-normal"
+                  placeholder="Entrez votre nom d'utilisateur ou email"
+                  value=""
+                />
+              </label>
+
+              <label class="flex flex-col w-full">
+                <p class="text-[#0d121b] dark:text-white/80 text-base font-medium leading-normal pb-2">Email d'utilisateur</p>
                 <input
                   name="login"
                   class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#0d121b] dark:text-white focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-[#cfd7e7] dark:border-white/20 bg-[#f8f9fc] dark:bg-white/5 focus:border-primary h-14 placeholder:text-[#4c669a] dark:placeholder:text-white/40 p-[15px] text-base font-normal leading-normal"
@@ -83,14 +103,14 @@
 
             <div class="flex px-4 py-3 mt-2">
               <button type="submit" class="flex min-w-[84px] w-full cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-5 flex-1 bg-primary hover:bg-primary/90 text-[#f8f9fc] dark:text-white text-base font-bold leading-normal tracking-[0.015em] transition-colors">
-                <span class="truncate">Se connecter</span>
+                <span class="truncate">S'inscrire</span>
               </button>
             </div>
 
-            <div class="flex flex-col sm:flex-row items-center justify-between gap-2 px-4 pt-4 text-sm text-center">
+            {{-- <div class="flex flex-col sm:flex-row items-center justify-between gap-2 px-4 pt-4 text-sm text-center">
               <a class="text-primary hover:underline dark:text-primary/90" href="#">Mot de passe oublié ?</a>
-              <a class="text-primary hover:underline dark:text-primary/90" href="{{ route('inscription') }}">Créer un compte</a>
-            </div>
+              <a class="text-primary hover:underline dark:text-primary/90" href="#">Créer un compte</a>
+            </div> --}}
           </div>
 
           <div class="text-center mt-6">
