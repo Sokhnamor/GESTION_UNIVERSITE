@@ -8,15 +8,21 @@ use App\Http\Controllers\ControllerDashboard;
 use App\Http\Controllers\ExportController;
 use App\Http\Controllers\ControllerGestionModule;
 use App\Http\Controllers\GradeValidationController;
+use App\Http\Controllers\connexion;
+
 
 
 Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
 Route::put('/profile', [ProfileController::class, 'updatePassword'])->name('profile.update');
 route::get('/export', [ExportController::class, 'index'])->name('export');
 Route::get('/grades-validation', [GradeValidationController::class, 'index'])->name('gradevalidation');
+Route::get('/connexion', [connexion::class, 'connect'])->name('connexion');
+Route::post('/connexion', [connexion::class, 'submit'])->name('connexion.submit');
+
+
    
 
-Route::get('/dashboard', [ControllerDashboard::class, 'mor'])->name('dashboard');
+Route::get('/', [ControllerDashboard::class, 'mor'])->name('dashboard');
 Route::get('/gestionModule', [ControllerGestionModule::class, 'diop']) ->name('gestionModule'); 
 Route::get('/importation', [ControllerImportation::class, 'bass']) ->name('importation'); 
 

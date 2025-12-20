@@ -98,7 +98,7 @@
 </div>
 <p class="text-xs text-white/80">7.5 GB / 10 GB utilisés</p>
 </div>
-<a class="flex items-center gap-3 px-3 py-3 rounded-lg text-[#e73908] hover:bg-red-50 dark:hover:bg-red-900/10 transition-colors mt-2" href="#">
+<a class="flex items-center gap-3 px-3 py-3 rounded-lg text-[#e73908] hover:bg-red-50 dark:hover:bg-red-900/10 transition-colors mt-2" href="{{ route('connexion') }}">
 <span class="material-symbols-outlined text-[24px]">logout</span>
 <p class="text-sm font-medium leading-normal">Déconnexion</p>
 </a>
@@ -140,7 +140,7 @@
 <nav class="sticky top-0 z-20 w-full bg-white dark:bg-[#1a2234] border-b border-[#e7ebf3] dark:border-gray-800 px-6 overflow-x-auto shadow-sm">
 <ul class="flex items-center gap-6 md:gap-8 h-12 min-w-max">
 <li>
-<a class="flex items-center gap-2 h-12 text-sm font-bold text-primary border-b-2 border-primary" href="#">
+<a class="flex items-center gap-2 h-12 text-sm font-bold text-primary border-b-2 border-primary" href="{{ route('dashboard') }}">
 <span class="material-symbols-outlined text-[20px] icon-filled">dashboard</span>
                 Tableau de Bord
             </a>
@@ -158,15 +158,15 @@
             </a>
 </li>
 <li>
-<a class="flex items-center gap-2 h-12 text-sm font-medium text-[#4c669a] dark:text-gray-400 hover:text-[#0d121b] dark:hover:text-white border-b-2 border-transparent hover:border-gray-200 transition-colors" href="#">
+<a class="flex items-center gap-2 h-12 text-sm font-medium text-[#4c669a] dark:text-gray-400 hover:text-[#0d121b] dark:hover:text-white border-b-2 border-transparent hover:border-gray-200 transition-colors" href="{{route('gradevalidation')}}">
 <span class="material-symbols-outlined text-[20px]">fact_check</span>
                 Consultation et Validation des Notes
             </a>
 </li>
 <li>
-<a class="flex items-center gap-2 h-12 text-sm font-medium text-[#4c669a] dark:text-gray-400 hover:text-[#0d121b] dark:hover:text-white border-b-2 border-transparent hover:border-gray-200 transition-colors" href="#">
+<a class="flex items-center gap-2 h-12 text-sm font-medium text-[#4c669a] dark:text-gray-400 hover:text-[#0d121b] dark:hover:text-white border-b-2 border-transparent hover:border-gray-200 transition-colors" href="{{route('export')}}">
 <span class="material-symbols-outlined text-[20px]">file_download</span>
-                Exportation des Données
+                Exportation des Donnée
             </a>
 </li>
 </ul>

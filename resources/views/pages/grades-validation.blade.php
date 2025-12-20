@@ -62,7 +62,7 @@
 </div>
 </div>
 <nav class="flex-1 px-4 flex flex-col gap-2 overflow-y-auto">
-<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors group" href="#">
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors group" href="{{ route('dashboard') }}">
 <span class="material-symbols-outlined text-[24px] group-hover:text-primary transition-colors">dashboard</span>
 <span class="text-sm font-medium">Tableau de bord</span>
 </a>

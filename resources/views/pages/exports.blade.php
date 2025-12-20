@@ -48,7 +48,7 @@
 <h2 class="text-[#0d121b] dark:text-white text-lg font-bold leading-tight tracking-[-0.015em]">GradeSecure</h2>
 </div>
 <div class="hidden md:flex items-center gap-9">
-<a class="text-[#0d121b] dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors text-sm font-medium leading-normal" href="#">Tableau de bord</a>
+<a class="text-[#0d121b] dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors text-sm font-medium leading-normal" href="{{ route('dashboard') }}">Tableau de bord</a>
 <a class="text-[#0d121b] dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors text-sm font-medium leading-normal" href="#">Scolarité</a>
 <a class="text-[#0d121b] dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors text-sm font-medium leading-normal" href="#">Examens</a>
 <a class="text-primary text-sm font-medium leading-normal" href="#">Rapports</a>
@@ -75,7 +75,7 @@
 <!-- Side Navbar -->
 <aside class="hidden lg:flex flex-col w-64 bg-white dark:bg-[#1a202c] border-r border-[#e7ebf3] dark:border-gray-800 p-4 gap-4 justify-between">
 <div class="flex flex-col gap-2">
-<a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors group" href="#">
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors group" href="{{ route('dashboard') }}">
 <span class="material-symbols-outlined text-[#4c669a] group-hover:text-primary">home</span>
 <p class="text-[#0d121b] dark:text-gray-300 text-sm font-medium leading-normal">Accueil</p>
 </a>

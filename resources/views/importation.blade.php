@@ -66,7 +66,7 @@
 <h2 class="text-xl font-bold leading-tight tracking-[-0.015em]">GradeScanner</h2>
 </div>
 <div class="hidden md:flex items-center gap-9">
-<a class="text-[#4c669a] dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors text-sm font-medium leading-normal" href="#">Tableau de bord</a>
+<a class="text-[#4c669a] dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors text-sm font-medium leading-normal" href="{{ Route ('dashboard') }}">Tableau de bord</a>
 <a class="text-primary text-sm font-medium leading-normal" href="#">Importation</a>
 <a class="text-[#4c669a] dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors text-sm font-medium leading-normal" href="#">Archives</a>
 <a class="text-[#4c669a] dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors text-sm font-medium leading-normal" href="#">Paramètres</a>
