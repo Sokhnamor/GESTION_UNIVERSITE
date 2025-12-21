@@ -365,7 +365,7 @@
 <p class="font-bold text-lg leading-tight">Nouveau Scan</p>
 <p class="text-blue-100 text-xs mt-0.5">Démarrer numérisation</p>
 </div>
-<span class="material-symbols-outlined ml-auto opacity-70">arrow_forward</span>
+<a href="{{ route('importation') }}" <span class="material-symbols-outlined ml-auto opacity-70">arrow_forward</span></a>
 </button>
 <button class="group flex items-center p-4 bg-white dark:bg-[#1a2234] border border-[#e7ebf3] dark:border-gray-800 rounded-xl hover:border-primary/50 dark:hover:border-primary/50 transition-all text-[#0d121b] dark:text-white">
 <div class="bg-blue-50 dark:bg-blue-900/20 text-primary p-3 rounded-lg mr-4 group-hover:scale-110 transition-transform">

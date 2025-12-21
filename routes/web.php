@@ -10,6 +10,12 @@ use App\Http\Controllers\ControllerGestionModule;
 use App\Http\Controllers\GradeValidationController;
 use App\Http\Controllers\connexion;
 use App\Http\Controllers\inscription;
+use App\Http\Controllers\etudiant;
+use App\Http\Controllers\appBar;
+use App\Http\Controllers\notes;
+use App\Http\Controllers\jury;
+use App\Http\Controllers\examen;
+use App\Http\Controllers\scolarite;
 
 
 
@@ -27,8 +33,19 @@ Route::post('/inscription', [inscription::class, 'boutton'])->name('inscription.
 
 
 
-   
+Route::get('/etudiant', [etudiant::class, 'etu'])->name('etudiant');
 
+//app-bar
+Route::get('/bar-export', [appBar::class, 'export'])->name('bar-export');
+Route::get('/bar-validation', [appBar::class, 'validation'])->name('bar-validation');
+route::get('/notes', [notes::class, 'note'])->name('notes');
+route::get('/jury', [jury::class, 'jury'])->name('jury');
+route::get('/examen', [examen::class, 'examen'])->name('examen');
+route::get('/scolarite', [scolarite::class, 'scolarite'])->name('scolarite');
+
+
+   
+//bassirou
 Route::get('/dashboard', [ControllerDashboard::class, 'board'])->name('dashboard');
 Route::get('/gestionModule', [ControllerGestionModule::class, 'module']) ->name('gestionModule'); 
 Route::get('/importation', [ControllerImportation::class, 'import']) ->name('importation'); 

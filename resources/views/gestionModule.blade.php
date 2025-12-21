@@ -59,7 +59,7 @@
 <div class="flex items-center gap-1 rounded-full bg-background-light dark:bg-background-dark p-1 border border-border-light dark:border-border-dark">
 <a class="px-4 py-2 text-sm font-medium text-text-sec-light dark:text-text-sec-dark hover:text-primary transition-colors" href="{{ Route ('dashboard')}}">Tableau de bord</a>
 <a class="px-4 py-2 text-sm font-bold text-primary bg-white dark:bg-slate-800 rounded-full shadow-sm" href="#">Filières &amp; Modules</a>
-<a class="px-4 py-2 text-sm font-medium text-text-sec-light dark:text-text-sec-dark hover:text-primary transition-colors" href="#">Étudiants</a>
+<a class="px-4 py-2 text-sm font-medium text-text-sec-light dark:text-text-sec-dark hover:text-primary transition-colors" href="{{ route('etudiant') }}">Étudiants</a>
 <a class="px-4 py-2 text-sm font-medium text-text-sec-light dark:text-text-sec-dark hover:text-primary transition-colors" href="#">Paramètres</a>
 </div>
 </nav>
