@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 class ControllerImportation extends Controller
 {
-    public function bass()
+    public function import()
     {
         return view('importation');
     }
