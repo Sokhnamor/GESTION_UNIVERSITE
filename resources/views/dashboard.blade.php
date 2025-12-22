@@ -78,7 +78,7 @@
 <span class="material-symbols-outlined text-[24px]">inventory_2</span>
 <p class="text-sm font-medium leading-normal">Archives</p>
 </a>
-<a class="flex items-center gap-3 px-3 py-3 rounded-lg text-[#4c669a] dark:text-gray-400 hover:bg-[#f8f9fc] dark:hover:bg-gray-800 transition-colors" href="#">
+<a class="flex items-center gap-3 px-3 py-3 rounded-lg text-[#4c669a] dark:text-gray-400 hover:bg-[#f8f9fc] dark:hover:bg-gray-800 transition-colors" href="{{ route('profile.edit') }}">
 <span class="material-symbols-outlined text-[24px]">settings</span>
 <p class="text-sm font-medium leading-normal">Paramètres</p>
 </a>
