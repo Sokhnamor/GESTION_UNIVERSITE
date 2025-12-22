@@ -10,8 +10,9 @@ use App\Http\Controllers\ControllerGestionModule;
 use App\Http\Controllers\GradeValidationController;
 use App\Http\Controllers\connexion;
 use App\Http\Controllers\inscription;
-use App\Http\Controllers\etudiant;
 use App\Http\Controllers\appBar;
+use App\Http\Controllers\ControllerEtudiant;
+use App\Http\Controllers\ControllerJury;
 use App\Http\Controllers\notes;
 use App\Http\Controllers\jury;
 use App\Http\Controllers\examen;
@@ -37,13 +38,14 @@ Route::post('/inscription', [inscription::class, 'boutton'])->name('inscription.
 
 
 
-Route::get('/etudiant', [etudiant::class, 'etu'])->name('etudiant');
-
+Route::get('/etudiant', [ControllerEtudiant::class, 'create'])->name('etudiant');
+Route::post('/etudiant', [ControllerEtudiant::class, 'store'])->name('etudiant.store');
 //app-bar
 Route::get('/bar-export', [appBar::class, 'export'])->name('bar-export');
 Route::get('/bar-gestionModule', [appBar::class, 'gestionModule'])->name('bar-gestionModule');
 route::get('/notes', [notes::class, 'note'])->name('notes');
-route::get('/jury', [jury::class, 'jury'])->name('jury');
+route::get('/jury', [ControllerJury::class, 'create'])->name('jury');
+route::post('/jury', [ControllerJury::class, 'store'])->name('jury.store');
 route::get('/examen', [examen::class, 'examen'])->name('examen');
 route::get('/scolarite', [scolarite::class, 'scolarite'])->name('scolarite');
 route::get('/rapport-jury', [rapportjury::class, 'rapport'])->name('rapport-jury');
