@@ -68,7 +68,7 @@
             </div>
             <div class="flex flex-1 justify-end gap-8 items-center">
                 <div class="hidden lg:flex items-center gap-9">
-                    <a class="text-[#0d121b] dark:text-gray-200 text-sm font-medium leading-normal hover:text-primary transition-colors" href="#">Tableau de bord</a>
+                    <a class="text-[#0d121b] dark:text-gray-200 text-sm font-medium leading-normal hover:text-primary transition-colors" href="{{ route('dashboard') }}">Tableau de bord</a>
                     <a class="text-[#0d121b] dark:text-gray-200 text-sm font-medium leading-normal hover:text-primary transition-colors" href="#">Scans</a>
                     <a class="text-[#0d121b] dark:text-gray-200 text-sm font-medium leading-normal hover:text-primary transition-colors" href="#">Archives</a>
                     <a class="text-[#0d121b] dark:text-gray-200 text-sm font-medium leading-normal hover:text-primary transition-colors" href="#">Utilisateurs</a>

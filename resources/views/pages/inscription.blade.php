@@ -57,7 +57,7 @@
               <label class="flex flex-col w-full">
                 <p class="text-[#0d121b] dark:text-white/80 text-base font-medium leading-normal pb-2">Nom d'utilisateur</p>
                 <input
-                  name="login"
+                  name="nom"
                   class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#0d121b] dark:text-white focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-[#cfd7e7] dark:border-white/20 bg-[#f8f9fc] dark:bg-white/5 focus:border-primary h-14 placeholder:text-[#4c669a] dark:placeholder:text-white/40 p-[15px] text-base font-normal leading-normal"
                   placeholder="Entrez votre nom d'utilisateur ou email"
                   value=""
@@ -67,7 +67,7 @@
               <label class="flex flex-col w-full">
                 <p class="text-[#0d121b] dark:text-white/80 text-base font-medium leading-normal pb-2">Prenom d'utilisateur</p>
                 <input
-                  name="login"
+                  name="prenom"
                   class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#0d121b] dark:text-white focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-[#cfd7e7] dark:border-white/20 bg-[#f8f9fc] dark:bg-white/5 focus:border-primary h-14 placeholder:text-[#4c669a] dark:placeholder:text-white/40 p-[15px] text-base font-normal leading-normal"
                   placeholder="Entrez votre nom d'utilisateur ou email"
                   value=""
@@ -77,7 +77,7 @@
               <label class="flex flex-col w-full">
                 <p class="text-[#0d121b] dark:text-white/80 text-base font-medium leading-normal pb-2">Email d'utilisateur</p>
                 <input
-                  name="login"
+                  name="email"
                   class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#0d121b] dark:text-white focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-[#cfd7e7] dark:border-white/20 bg-[#f8f9fc] dark:bg-white/5 focus:border-primary h-14 placeholder:text-[#4c669a] dark:placeholder:text-white/40 p-[15px] text-base font-normal leading-normal"
                   placeholder="Entrez votre nom d'utilisateur ou email"
                   value=""

@@ -40,7 +40,16 @@
 
   <form method="POST" action="{{ route('connexion.submit') }}">
     @csrf
-
+@if (session('error')){
+    <div class="p-4 mb-4 text-sm text-red-700 bg-red-100 rounded-lg dark:bg-red-200 dark:text-red-800" role="alert">
+        <span class="font-medium">Erreur !</span> {{ session('error') }}
+    </div>
+}
+@if (session('success')){
+    <div class="p-4 mb-4 text-sm text-green-700 bg-green-100 rounded-lg dark:bg-green-200 dark:text-green-800" role="alert">
+        <span class="font-medium">Success !</span> {{ session('success') }}
+    </div>
+}
     <div class="relative flex h-auto min-h-screen w-full flex-col items-center justify-center bg-background-light dark:bg-background-dark group/design-root overflow-x-hidden p-4 sm:p-6" style='font-family: Inter, "Noto Sans", sans-serif;'>
       <div class="layout-container flex h-full grow flex-col w-full max-w-md">
         <div class="flex flex-col items-center justify-center flex-1">
@@ -57,7 +66,7 @@
               <label class="flex flex-col w-full">
                 <p class="text-[#0d121b] dark:text-white/80 text-base font-medium leading-normal pb-2">Nom d'utilisateur ou email</p>
                 <input
-                  name="login"
+                  name="email"
                   class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#0d121b] dark:text-white focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-[#cfd7e7] dark:border-white/20 bg-[#f8f9fc] dark:bg-white/5 focus:border-primary h-14 placeholder:text-[#4c669a] dark:placeholder:text-white/40 p-[15px] text-base font-normal leading-normal"
                   placeholder="Entrez votre nom d'utilisateur ou email"
                   value=""
