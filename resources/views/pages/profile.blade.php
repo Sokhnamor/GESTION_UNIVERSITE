@@ -147,8 +147,8 @@
                             <div class="flex gap-6 items-center">
                                 <div class="bg-center bg-no-repeat bg-cover rounded-full h-24 w-24 ring-4 ring-gray-50 dark:ring-gray-800" data-alt="Current user avatar image" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuD0ShR5wpNVX-yjctZDZrq-pAvTZ6ctxnxoY7HL-HWbRCRarciMIp6mV1MmaYE1JgchpK0GMGWJQQ4hGGPabBxu8zOhTd8LdCOI02R_rjwV2GH8UkHoRdEVm72elFy_YzztSdaX14d_Rre2PW2Wj6u8lTkEJrj_hUkBPfI8NNqezrxfXwx4bN5RHnAnJK4NQ_IxlpzpyzYQdnapI6V7F27VUiTBm1QPuk0NCmRKGuSLdgDml_X6E63KTCpulI8UYgsUgv5OBRZwmZ4");'></div>
                                 <div class="flex flex-col justify-center gap-1">
-                                    <h3 class="text-[#0d121b] dark:text-white text-xl font-bold leading-tight">Jean Dupont</h3>
-                                    <p class="text-[#4c669a] dark:text-gray-400 text-sm font-normal">jean.dupont@university.edu</p>
+                                    <h3 class="text-[#0d121b] dark:text-white text-xl font-bold leading-tight">{{Auth::user()->prenom}} {{Auth::user()->nom}}</h3>
+                                    <p class="text-[#4c669a] dark:text-gray-400 text-sm font-normal">{{Auth::user()->email}}</p>
                                     <span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 mt-2 rounded-full text-xs font-medium bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-300 w-fit">
                                         <span class="material-symbols-outlined text-[14px]">verified_user</span>
                                         Administrateur
@@ -170,19 +170,19 @@
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div class="flex flex-col gap-2">
                                 <label class="text-[#0d121b] dark:text-gray-200 text-sm font-medium" for="firstName">Prénom</label>
-                                <input class="bg-[#f8f9fc] dark:bg-gray-800 border border-[#e7ebf3] dark:border-gray-700 text-[#0d121b] dark:text-white text-sm rounded-lg focus:ring-primary focus:border-primary block w-full p-2.5" id="firstName" placeholder="Votre prénom" type="text" value="Jean"/>
+                                <input class="bg-[#f8f9fc] dark:bg-gray-800 border border-[#e7ebf3] dark:border-gray-700 text-[#0d121b] dark:text-white text-sm rounded-lg focus:ring-primary focus:border-primary block w-full p-2.5" id="firstName" placeholder="Votre prénom" type="text" value="{{Auth::user()->prenom}}"/>
                             </div>
                             <div class="flex flex-col gap-2">
                                 <label class="text-[#0d121b] dark:text-gray-200 text-sm font-medium" for="lastName">Nom</label>
-                                <input class="bg-[#f8f9fc] dark:bg-gray-800 border border-[#e7ebf3] dark:border-gray-700 text-[#0d121b] dark:text-white text-sm rounded-lg focus:ring-primary focus:border-primary block w-full p-2.5" id="lastName" placeholder="Votre nom" type="text" value="Dupont"/>
+                                <input class="bg-[#f8f9fc] dark:bg-gray-800 border border-[#e7ebf3] dark:border-gray-700 text-[#0d121b] dark:text-white text-sm rounded-lg focus:ring-primary focus:border-primary block w-full p-2.5" id="lastName" placeholder="Votre nom" type="text" value="{{Auth::user()->nom}}"/>
                             </div>
                             <div class="flex flex-col gap-2">
                                 <label class="text-[#0d121b] dark:text-gray-200 text-sm font-medium" for="email">Adresse Email</label>
-                                <input class="bg-[#f8f9fc] dark:bg-gray-800 border border-[#e7ebf3] dark:border-gray-700 text-[#0d121b] dark:text-white text-sm rounded-lg focus:ring-primary focus:border-primary block w-full p-2.5" id="email" placeholder="exemple@domaine.com" type="email" value="jean.dupont@university.edu"/>
+                                <input class="bg-[#f8f9fc] dark:bg-gray-800 border border-[#e7ebf3] dark:border-gray-700 text-[#0d121b] dark:text-white text-sm rounded-lg focus:ring-primary focus:border-primary block w-full p-2.5" id="email" placeholder="exemple@domaine.com" type="email" value="{{Auth::user()->email}}"/>
                             </div>
                             <div class="flex flex-col gap-2">
                                 <label class="text-[#0d121b] dark:text-gray-200 text-sm font-medium" for="phone">Téléphone</label>
-                                <input class="bg-[#f8f9fc] dark:bg-gray-800 border border-[#e7ebf3] dark:border-gray-700 text-[#0d121b] dark:text-white text-sm rounded-lg focus:ring-primary focus:border-primary block w-full p-2.5" id="phone" placeholder="+33 6 ..." type="tel" value="+33 6 12 34 56 78"/>
+                                <input class="bg-[#f8f9fc] dark:bg-gray-800 border border-[#e7ebf3] dark:border-gray-700 text-[#0d121b] dark:text-white text-sm rounded-lg focus:ring-primary focus:border-primary block w-full p-2.5" id="phone" placeholder="+33 6 ..." type="tel" value="+221 78 00 00 00"/>
                             </div>
                             <div class="flex flex-col gap-2 md:col-span-2">
                                 <label class="text-[#0d121b] dark:text-gray-200 text-sm font-medium" for="department">Département Académique</label>
