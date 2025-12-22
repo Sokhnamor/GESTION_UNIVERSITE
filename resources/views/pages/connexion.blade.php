@@ -48,7 +48,16 @@
             <div class="flex justify-center mb-6">
               <div class="w-24 h-8 bg-center bg-no-repeat bg-contain" data-alt="Kara SAMB company logo" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA3IyxQ10_JjgZ0nEwh0FcqRx5275FJJJp6OsXEdcVzAFyt9Dw4Yct_hWTAH4-etsjWDyUfWoAcrcPz3wuj1E6hD5dwO3kOF27ISJuUZH0XOkGXpdjFbkhlHSkVMC3hanGk5SpGgtTZehxICc23eCtq7qMUMTMqknGoccMmqc4XnFTf_VbA1R7Y8ODIuk80-xWKAq7Ijb-Fbzj9JGf3wB8Nnegm91satIfbnBXJCQc7sSWq7qZxDR7i8OvUm_nXKPkuRpDbWjQ5qw");'></div>
             </div>
-
+@if (session('error'))
+    <div class="p-4 mb-4 text-sm text-red-700 bg-red-100 rounded-lg dark:bg-red-200 dark:text-red-800" role="alert">
+        <span class="font-medium">Erreur !</span> {{ session('error') }}
+    </div>
+@endif
+@if (session('success'))
+    <div class="p-4 mb-4 text-sm text-green-700 bg-green-100 rounded-lg dark:bg-green-200 dark:text-green-800" role="alert">
+        <span class="font-medium">Success !</span> {{ session('success') }}
+    </div>
+@endif
             <h1 class="text-[#0d121b] dark:text-white tracking-light text-[32px] font-bold leading-tight px-4 text-center pb-3 pt-6">
               Connexion à votre espace
             </h1>
@@ -57,7 +66,7 @@
               <label class="flex flex-col w-full">
                 <p class="text-[#0d121b] dark:text-white/80 text-base font-medium leading-normal pb-2">Nom d'utilisateur ou email</p>
                 <input
-                  name="login"
+                  name="email"
                   class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#0d121b] dark:text-white focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-[#cfd7e7] dark:border-white/20 bg-[#f8f9fc] dark:bg-white/5 focus:border-primary h-14 placeholder:text-[#4c669a] dark:placeholder:text-white/40 p-[15px] text-base font-normal leading-normal"
                   placeholder="Entrez votre nom d'utilisateur ou email"
                   value=""

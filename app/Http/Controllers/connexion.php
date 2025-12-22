@@ -1,9 +1,9 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\User;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\Auth;
 class connexion extends Controller
 {
     public function connect()
@@ -13,7 +13,14 @@ class connexion extends Controller
 
     public function submit(Request $request)
     {
-        session(['connected' => true]);
-        return redirect()->route('dashboard');
+
+        $veirfy=Auth::attempt($request->only('email', 'password'));
+        if ($veirfy) {
+            return redirect()->route('dashboard');
+        }else{
+            return redirect()->back()->with('error', 'Email ou mot de passe incorrect.');
+            
+        }
+        
     }
 }
