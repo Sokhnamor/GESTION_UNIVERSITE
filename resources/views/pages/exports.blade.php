@@ -146,6 +146,7 @@
 <div class="flex flex-col gap-3">
 <label class="text-sm font-semibold text-[#0d121b] dark:text-gray-300">Type de document</label>
 <div class="grid grid-cols-2 gap-3">
+<a href="{{ route('notes') }}">
 <label class="cursor-pointer">
 <input checked="" class="peer sr-only" name="docType" type="radio"/>
 <div class="flex flex-col items-center justify-center p-3 rounded-lg border-2 border-[#e7ebf3] dark:border-gray-700 bg-background-light dark:bg-gray-800 peer-checked:border-primary peer-checked:bg-primary/5 hover:border-primary/50 transition-all">
@@ -153,6 +154,8 @@
 <span class="text-xs font-medium text-[#0d121b] dark:text-white peer-checked:text-primary text-center">Relevé de Notes</span>
 </div>
 </label>
+</a>
+<a href="#">
 <label class="cursor-pointer">
 <input class="peer sr-only" name="docType" type="radio"/>
 <div class="flex flex-col items-center justify-center p-3 rounded-lg border-2 border-[#e7ebf3] dark:border-gray-700 bg-background-light dark:bg-gray-800 peer-checked:border-primary peer-checked:bg-primary/5 hover:border-primary/50 transition-all">
@@ -160,6 +163,8 @@
 <span class="text-xs font-medium text-[#0d121b] dark:text-white peer-checked:text-primary text-center">Rapport Jury</span>
 </div>
 </label>
+</a>
+<a href="#">
 <label class="cursor-pointer">
 <input class="peer sr-only" name="docType" type="radio"/>
 <div class="flex flex-col items-center justify-center p-3 rounded-lg border-2 border-[#e7ebf3] dark:border-gray-700 bg-background-light dark:bg-gray-800 peer-checked:border-primary peer-checked:bg-primary/5 hover:border-primary/50 transition-all">
@@ -167,6 +172,8 @@
 <span class="text-xs font-medium text-[#0d121b] dark:text-white peer-checked:text-primary text-center">Liste Étudiants</span>
 </div>
 </label>
+</a>
+<a href="#">
 <label class="cursor-pointer">
 <input class="peer sr-only" name="docType" type="radio"/>
 <div class="flex flex-col items-center justify-center p-3 rounded-lg border-2 border-[#e7ebf3] dark:border-gray-700 bg-background-light dark:bg-gray-800 peer-checked:border-primary peer-checked:bg-primary/5 hover:border-primary/50 transition-all">
@@ -174,6 +181,7 @@
 <span class="text-xs font-medium text-[#0d121b] dark:text-white peer-checked:text-primary text-center">Données Brutes</span>
 </div>
 </label>
+</a>
 </div>
 </div>
 <!-- Format -->
