@@ -13,6 +13,15 @@ return new class extends Migration
     {
         Schema::table('jury', function (Blueprint $table) {
             //
+            $table->string('id')->primary();
+            $table->string('session_id')->nullable()->index();
+            $table->string('promotion_id')->nullable()->index();
+            $table->string('year')->nullable();
+            $table->string('semester')->nullable();
+            $table->integer('number_of_students')->nullable();
+            $table->text('name')->nullable();
+            $table->text('description')->nullable();
+            $table->timestamps();
         });
     }
 
