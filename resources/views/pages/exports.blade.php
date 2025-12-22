@@ -146,34 +146,42 @@
 <div class="flex flex-col gap-3">
 <label class="text-sm font-semibold text-[#0d121b] dark:text-gray-300">Type de document</label>
 <div class="grid grid-cols-2 gap-3">
+<a href="{{ route('notes') }}">
 <label class="cursor-pointer">
-<input checked="" class="peer sr-only" name="docType" type="radio"/>
+<input checked="" class="peer sr-only" name="docType" type="text"/>
 <div class="flex flex-col items-center justify-center p-3 rounded-lg border-2 border-[#e7ebf3] dark:border-gray-700 bg-background-light dark:bg-gray-800 peer-checked:border-primary peer-checked:bg-primary/5 hover:border-primary/50 transition-all">
 <span class="material-symbols-outlined text-[#4c669a] peer-checked:text-primary mb-1">description</span>
 <span class="text-xs font-medium text-[#0d121b] dark:text-white peer-checked:text-primary text-center">Relevé de Notes</span>
 </div>
 </label>
+</a>
+<a href="{{ route('jury') }}">
 <label class="cursor-pointer">
-<input class="peer sr-only" name="docType" type="radio"/>
+<input class="peer sr-only" name="docType" type="text"/>
 <div class="flex flex-col items-center justify-center p-3 rounded-lg border-2 border-[#e7ebf3] dark:border-gray-700 bg-background-light dark:bg-gray-800 peer-checked:border-primary peer-checked:bg-primary/5 hover:border-primary/50 transition-all">
 <span class="material-symbols-outlined text-[#4c669a] peer-checked:text-primary mb-1">gavel</span>
 <span class="text-xs font-medium text-[#0d121b] dark:text-white peer-checked:text-primary text-center">Rapport Jury</span>
 </div>
 </label>
+</a>
+<a href="{{ route('scolarite') }}">
 <label class="cursor-pointer">
-<input class="peer sr-only" name="docType" type="radio"/>
+<input class="peer sr-only" name="docType" type="text"/>
 <div class="flex flex-col items-center justify-center p-3 rounded-lg border-2 border-[#e7ebf3] dark:border-gray-700 bg-background-light dark:bg-gray-800 peer-checked:border-primary peer-checked:bg-primary/5 hover:border-primary/50 transition-all">
 <span class="material-symbols-outlined text-[#4c669a] peer-checked:text-primary mb-1">groups</span>
 <span class="text-xs font-medium text-[#0d121b] dark:text-white peer-checked:text-primary text-center">Liste Étudiants</span>
 </div>
 </label>
+</a>
+<a href="#">
 <label class="cursor-pointer">
-<input class="peer sr-only" name="docType" type="radio"/>
+<input class="peer sr-only" name="docType" type="text"/>
 <div class="flex flex-col items-center justify-center p-3 rounded-lg border-2 border-[#e7ebf3] dark:border-gray-700 bg-background-light dark:bg-gray-800 peer-checked:border-primary peer-checked:bg-primary/5 hover:border-primary/50 transition-all">
 <span class="material-symbols-outlined text-[#4c669a] peer-checked:text-primary mb-1">dataset</span>
 <span class="text-xs font-medium text-[#0d121b] dark:text-white peer-checked:text-primary text-center">Données Brutes</span>
 </div>
 </label>
+</a>
 </div>
 </div>
 <!-- Format -->
