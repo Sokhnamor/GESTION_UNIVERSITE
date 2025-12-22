@@ -40,16 +40,7 @@
 
   <form method="POST" action="{{ route('connexion.submit') }}">
     @csrf
-@if (session('error')){
-    <div class="p-4 mb-4 text-sm text-red-700 bg-red-100 rounded-lg dark:bg-red-200 dark:text-red-800" role="alert">
-        <span class="font-medium">Erreur !</span> {{ session('error') }}
-    </div>
-}
-@if (session('success')){
-    <div class="p-4 mb-4 text-sm text-green-700 bg-green-100 rounded-lg dark:bg-green-200 dark:text-green-800" role="alert">
-        <span class="font-medium">Success !</span> {{ session('success') }}
-    </div>
-}
+
     <div class="relative flex h-auto min-h-screen w-full flex-col items-center justify-center bg-background-light dark:bg-background-dark group/design-root overflow-x-hidden p-4 sm:p-6" style='font-family: Inter, "Noto Sans", sans-serif;'>
       <div class="layout-container flex h-full grow flex-col w-full max-w-md">
         <div class="flex flex-col items-center justify-center flex-1">
@@ -57,7 +48,16 @@
             <div class="flex justify-center mb-6">
               <div class="w-24 h-8 bg-center bg-no-repeat bg-contain" data-alt="Kara SAMB company logo" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA3IyxQ10_JjgZ0nEwh0FcqRx5275FJJJp6OsXEdcVzAFyt9Dw4Yct_hWTAH4-etsjWDyUfWoAcrcPz3wuj1E6hD5dwO3kOF27ISJuUZH0XOkGXpdjFbkhlHSkVMC3hanGk5SpGgtTZehxICc23eCtq7qMUMTMqknGoccMmqc4XnFTf_VbA1R7Y8ODIuk80-xWKAq7Ijb-Fbzj9JGf3wB8Nnegm91satIfbnBXJCQc7sSWq7qZxDR7i8OvUm_nXKPkuRpDbWjQ5qw");'></div>
             </div>
-
+@if (session('error'))
+    <div class="p-4 mb-4 text-sm text-red-700 bg-red-100 rounded-lg dark:bg-red-200 dark:text-red-800" role="alert">
+        <span class="font-medium">Erreur !</span> {{ session('error') }}
+    </div>
+@endif
+@if (session('success'))
+    <div class="p-4 mb-4 text-sm text-green-700 bg-green-100 rounded-lg dark:bg-green-200 dark:text-green-800" role="alert">
+        <span class="font-medium">Success !</span> {{ session('success') }}
+    </div>
+@endif
             <h1 class="text-[#0d121b] dark:text-white tracking-light text-[32px] font-bold leading-tight px-4 text-center pb-3 pt-6">
               Connexion à votre espace
             </h1>

@@ -14,11 +14,13 @@ class connexion extends Controller
     public function submit(Request $request)
     {
 
-        Auth::attempt($request->only('email', 'password'));
-        if (!Auth::check()) {
-            return redirect()->route('connexion')->with('error', 'Email ou mot de passe incorrect.');
+        $veirfy=Auth::attempt($request->only('email', 'password'));
+        if ($veirfy) {
+            return redirect()->route('dashboard');
+        }else{
+            return redirect()->back()->with('error', 'Email ou mot de passe incorrect.');
+            
         }
         
-        return redirect()->route('dashboard');
     }
 }
