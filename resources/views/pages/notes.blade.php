@@ -8,7 +8,7 @@
 
 <!-- Breadcrumbs -->
 <nav class="flex flex-wrap gap-2 pb-4 text-sm">
-  <a class="text-[#4c669a] dark:text-gray-400 hover:text-primary font-medium" href="{{ route('dashboard') }}">Accueil</a>
+  <a class="text-[#4c669a] dark:text-gray-400 hover:text-primary font-medium" href="{{ route('export') }}">Accueil</a>
   <span class="text-[#4c669a] dark:text-gray-600 font-medium">/</span>
   <span class="text-[#0d121b] dark:text-gray-200 font-medium">Gestion des Notes</span>
 </nav>
