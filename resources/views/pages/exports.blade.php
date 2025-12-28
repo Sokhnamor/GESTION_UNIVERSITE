@@ -155,7 +155,7 @@
 </div>
 </label>
 </a>
-<a href="{{ route('jury') }}">
+<a href="{{ route('rapport-jury') }}">
 <label class="cursor-pointer">
 <input class="peer sr-only" name="docType" type="text"/>
 <div class="flex flex-col items-center justify-center p-3 rounded-lg border-2 border-[#e7ebf3] dark:border-gray-700 bg-background-light dark:bg-gray-800 peer-checked:border-primary peer-checked:bg-primary/5 hover:border-primary/50 transition-all">
@@ -164,7 +164,7 @@
 </div>
 </label>
 </a>
-<a href="{{ route('scolarite') }}">
+<a href="{{ route('liste-etudiant') }}">
 <label class="cursor-pointer">
 <input class="peer sr-only" name="docType" type="text"/>
 <div class="flex flex-col items-center justify-center p-3 rounded-lg border-2 border-[#e7ebf3] dark:border-gray-700 bg-background-light dark:bg-gray-800 peer-checked:border-primary peer-checked:bg-primary/5 hover:border-primary/50 transition-all">

@@ -16,6 +16,8 @@ use App\Http\Controllers\notes;
 use App\Http\Controllers\jury;
 use App\Http\Controllers\examen;
 use App\Http\Controllers\scolarite;
+use App\Http\Controllers\rapportjury;
+use App\Http\Controllers\listeEtudiant;
 
 
 
@@ -42,6 +44,8 @@ route::get('/notes', [notes::class, 'note'])->name('notes');
 route::get('/jury', [jury::class, 'jury'])->name('jury');
 route::get('/examen', [examen::class, 'examen'])->name('examen');
 route::get('/scolarite', [scolarite::class, 'scolarite'])->name('scolarite');
+route::get('/rapport-jury', [rapportjury::class, 'rapport'])->name('rapport-jury');
+route::get('/liste-etudiant', [listeEtudiant::class, 'liste'])->name('liste-etudiant');
 
 
    
