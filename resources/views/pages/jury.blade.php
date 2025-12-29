@@ -24,8 +24,8 @@
 <!-- Form Card -->
 <div class="bg-white dark:bg-[#1a202c] rounded-xl shadow-sm border border-[#e7ebf3] dark:border-gray-700 p-6">
 
-  <form class="grid grid-cols-1 md:grid-cols-2 gap-6">
-
+  <form class="grid grid-cols-1 md:grid-cols-2 gap-6" method="post">
+ @csrf
     <!-- Code Jury -->
     <div>
       <label class="block text-sm font-medium mb-2">Code Jury</label>
