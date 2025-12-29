@@ -11,9 +11,9 @@ class appBAr extends Controller
         return view('appBar.bar-export');
     }
 
-    public function validation()
+    public function gestionModule()
     {
-        return view('appBar.bar-validation');
+        return view('appBar.bar-gestionModule');
     }
     
 }

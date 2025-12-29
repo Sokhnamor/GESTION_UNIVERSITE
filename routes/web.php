@@ -18,6 +18,8 @@ use App\Http\Controllers\examen;
 use App\Http\Controllers\scolarite;
 use App\Http\Controllers\rapportjury;
 use App\Http\Controllers\listeEtudiant;
+use App\Http\Controllers\pagesModule;
+
 
 
 
@@ -39,13 +41,19 @@ Route::get('/etudiant', [etudiant::class, 'etu'])->name('etudiant');
 
 //app-bar
 Route::get('/bar-export', [appBar::class, 'export'])->name('bar-export');
-Route::get('/bar-validation', [appBar::class, 'validation'])->name('bar-validation');
+Route::get('/bar-gestionModule', [appBar::class, 'gestionModule'])->name('bar-gestionModule');
 route::get('/notes', [notes::class, 'note'])->name('notes');
 route::get('/jury', [jury::class, 'jury'])->name('jury');
 route::get('/examen', [examen::class, 'examen'])->name('examen');
 route::get('/scolarite', [scolarite::class, 'scolarite'])->name('scolarite');
 route::get('/rapport-jury', [rapportjury::class, 'rapport'])->name('rapport-jury');
 route::get('/liste-etudiant', [listeEtudiant::class, 'liste'])->name('liste-etudiant');
+
+
+//app-bar module
+route::get('/filiere', [pagesModule::class, 'filiere'])->name('filiere');
+route::get('/responsable', [pagesModule::class, 'responsable'])->name('responsable');
+route::get('/semestre', [pagesModule::class, 'semestre'])->name('semestre');
 
 
    

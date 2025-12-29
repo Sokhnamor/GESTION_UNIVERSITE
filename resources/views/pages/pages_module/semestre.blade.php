@@ -109,20 +109,21 @@
 </div>
 </div>
 <!-- Tabs -->
-<div class="mb-6 border-b border-border-light dark:border-border-dark">
+<div class="group flex items-center gap-2 pb-4 text-sm font-medium text-text-sec-light dark:text-text-sec-dark hover:text-primary transition-colors">
 <div class="flex gap-8">
-<a class="relative flex items-center gap-2 pb-4 text-sm font-bold text-primary" href="{{ route('gestionModule') }}">
+<a class="group flex items-center gap-2 pb-4 text-sm font-medium text-text-sec-light dark:text-text-sec-dark hover:text-primary transition-colors" href="{{ route('gestionModule') }}">
 <span class="material-symbols-outlined">view_module</span>
                         Modules
-                        <span class="absolute bottom-0 left-0 h-0.5 w-full bg-primary"></span>
+                        
 </a>
 <a class="group flex items-center gap-2 pb-4 text-sm font-medium text-text-sec-light dark:text-text-sec-dark hover:text-primary transition-colors" href="{{ route('filiere') }}">
 <span class="material-symbols-outlined group-hover:text-primary">schema</span>
                         Filières
                     </a>
-<a class="group flex items-center gap-2 pb-4 text-sm font-medium text-text-sec-light dark:text-text-sec-dark hover:text-primary transition-colors" href="{{ route('semestre') }}">
+<a class="relative flex items-center gap-2 pb-4 text-sm font-bold text-primary" href="{{ route('semestre') }}">
 <span class="material-symbols-outlined group-hover:text-primary">calendar_month</span>
                         Semestres
+                        <span class="absolute bottom-0 left-0 h-0.5 w-full bg-primary"></span>
                     </a>
 <a class="group flex items-center gap-2 pb-4 text-sm font-medium text-text-sec-light dark:text-text-sec-dark hover:text-primary transition-colors" href="{{ route('responsable') }}">
 <span class="material-symbols-outlined group-hover:text-primary">groups</span>
@@ -305,7 +306,7 @@
 <!-- Form Header -->
 <div class="flex items-center justify-between border-b border-border-light dark:border-border-dark px-6 py-4">
 <div>
-<h3 class="font-bold text-text-main-light dark:text-text-main-dark">Détails du Module</h3>
+<h3 class="font-bold text-text-main-light dark:text-text-main-dark">Détails Semestre</h3>
 <p class="text-xs text-text-sec-light dark:text-text-sec-dark">Modification de INF-204</p>
 </div>
 <div class="flex gap-1">
@@ -325,43 +326,35 @@
 <input class="w-full rounded-lg border-border-light dark:border-border-dark bg-background-light dark:bg-slate-800 text-sm font-medium focus:border-primary focus:ring-primary" type="text" value="INF-204"/>
 </div>
 <div class="space-y-1.5">
-<label class="text-xs font-bold text-text-sec-light dark:text-text-sec-dark uppercase tracking-wide">Semestre</label>
+<label class="text-xs font-bold text-text-sec-light dark:text-text-sec-dark uppercase tracking-wide">Libellé</label>
 <select class="w-full rounded-lg border-border-light dark:border-border-dark bg-background-light dark:bg-slate-800 text-sm font-medium focus:border-primary focus:ring-primary">
 <option>Semestre 1</option>
 <option>Semestre 2</option>
 <option selected="">Semestre 3</option>
 <option>Semestre 4</option>
+<option>Semestre 5</option>
+<option>Semestre 6</option>
 </select>
 </div>
 </div>
 <div class="space-y-1.5">
-<label class="text-xs font-bold text-text-sec-light dark:text-text-sec-dark uppercase tracking-wide">Intitulé du Module</label>
-<input class="w-full rounded-lg border-border-light dark:border-border-dark bg-background-light dark:bg-slate-800 text-sm font-medium focus:border-primary focus:ring-primary" type="text" value="Bases de Données Relationnelles"/>
+<label class="text-xs font-bold text-text-sec-light dark:text-text-sec-dark uppercase tracking-wide">Niveau</label>
+<input class="w-full rounded-lg border-border-light dark:border-border-dark bg-background-light dark:bg-slate-800 text-sm font-medium focus:border-primary focus:ring-primary" type="text" value="Licence 3"/>
 </div>
 <div class="space-y-1.5">
-<label class="text-xs font-bold text-text-sec-light dark:text-text-sec-dark uppercase tracking-wide">Filière de rattachement</label>
+<label class="text-xs font-bold text-text-sec-light dark:text-text-sec-dark uppercase tracking-wide">Année Academique</label>
 <div class="relative">
 <select class="w-full appearance-none rounded-lg border-border-light dark:border-border-dark bg-background-light dark:bg-slate-800 py-2.5 pl-3 pr-8 text-sm font-medium focus:border-primary focus:ring-primary">
-<option selected="">Génie Logiciel</option>
-<option>Réseaux &amp; Télécoms</option>
-<option>Data Science</option>
+<option selected="">2025 - 2026</option>
+<option>2024 - 2025</option>
+<option>2026 - 2027</option>
 </select>
 <span class="pointer-events-none absolute right-3 top-2.5 text-text-sec-light">
 <span class="material-symbols-outlined text-[20px]">expand_more</span>
 </span>
 </div>
 </div>
-<div class="space-y-1.5">
-<label class="text-xs font-bold text-text-sec-light dark:text-text-sec-dark uppercase tracking-wide">Responsable</label>
-<div class="flex items-center gap-2 rounded-lg border border-border-light dark:border-border-dark bg-background-light dark:bg-slate-800 p-2">
-<div class="size-8 rounded-full bg-cover bg-center" data-alt="Avatar professeur sélectionné" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuADMYMYCIeyPiZ3us6uDdm1nnHC_7vBA9qQOtaf9-zZdc4zpajEuaQxJZJrki_CEeXipo8IHk-QTSokcv_BM4vrzhvKTXQcIg2Pp-ZBAAUJGmKLxNNpHeAex0X9RCvISHbMSUoc0Ut_l_DvYxXAnOBCZK9nXhVBy_B32cwfSdmL3wCja_OuztVqRHzNH3_Ew-OIPiVEofzOjCej7myyXVkp80HrK2DhX5QJhimOd7wkFJn1Q2aVQyFHcAccAL547eAmF-DjCWMt_RE');"></div>
-<div class="flex-1 min-w-0">
-<p class="truncate text-sm font-bold">Pr. Mansouri Ahmed</p>
-<p class="truncate text-xs text-text-sec-light">Dépt. Informatique</p>
-</div>
-<button class="text-primary hover:text-primary-hover text-sm font-medium px-2">Changer</button>
-</div>
-</div>
+
 <div class="space-y-1.5">
 <label class="flex items-center gap-3 p-3 rounded-lg border border-border-light dark:border-border-dark hover:bg-background-light dark:hover:bg-slate-800 cursor-pointer transition-colors">
 <input checked="" class="size-4 rounded border-gray-300 text-primary focus:ring-primary" type="checkbox"/>
@@ -371,12 +364,12 @@
 </div>
 </label>
 </div>
-</div>
+</div> 
 <!-- Form Footer -->
 <div class="flex items-center justify-end gap-3 border-t border-border-light dark:border-border-dark bg-background-light/50 dark:bg-slate-800/50 px-6 py-4 rounded-b-xl">
 <button class="px-4 py-2 text-sm font-bold text-text-sec-light hover:text-text-main-light dark:hover:text-white transition-colors">Annuler</button>
 <button class="rounded-lg bg-primary px-6 py-2 text-sm font-bold text-white shadow-lg shadow-primary/20 hover:bg-primary-hover transition-all">Enregistrer</button>
-</div>
+</div> -
 </div>
 </div>
 </div>
