@@ -46,6 +46,32 @@
           </tr>
         </thead>
 
+
+        <tbody>
+          @foreach ($listeEtudiant as $etudiant)
+          <!-- Exemple de ligne de données -->
+          <tr class="border-b border-[#e7ebf3] dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-900">
+            <td class="px-5 py-3 text-sm text-[#0d121b] dark:text-white">{{ $etudiant->matricule }}</td>
+            <td class="px-5 py-3 text-sm text-[#0d121b] dark:text-white">{{ $etudiant->numero_etudiant }}</td>
+            <td class="px-5 py-3 text-sm text-[#0d121b] dark:text-white">{{ $etudiant->nom }}</td>
+            <td class="px-5 py-3 text-sm text-[#0d121b] dark:text-white">{{ $etudiant->prenom }}</td>
+            <td class="px-5 py-3 text-sm text-[#0d121b] dark:text-white">{{ $etudiant->sexe }}</td>
+            <td class="px-5 py-3 text-sm text-[#0d121b] dark:text-white">{{ $etudiant->date_naissance }}</td>
+            <td class="px-5 py-3 text-sm text-[#0d121b] dark:text-white">{{ $etudiant->email }}</td>
+            <td class="px-5 py-3 text-sm text-[#0d121b] dark:text-white">{{ $etudiant->telephone }}</td>
+            <td class="px-5 py-3 text-sm text-[#0d121b] dark:text-white">{{ $etudiant->filiere }}</td>
+            <td class="px-5 py-3 text-sm text-[#0d121b] dark:text-white">{{ $etudiant->niveau }}</td>
+            <td class="px-5 py-3 text-sm text-[#0d121b] dark:text-white">{{ $etudiant->promotion }}</td>
+            <td class="px-5 py-3 text-sm text-[#0d121b] dark:text-white">Actif</td>
+            <td class="px-5 py-3 text-sm text-right">
+              <button class="text-blue-600 hover:underline mr-4">Éditer</button>
+              <button class="text-red-600 hover:underline">Supprimer</button>
+            </td>
+          </tr>
+          @endforeach
+              
+        </tbody>
+
 </div>
 </div>
 

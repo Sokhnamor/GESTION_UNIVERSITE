@@ -45,6 +45,28 @@
           </tr>
         </thead>
 
+        <tbody>
+          @foreach ($listeJury as $jury)
+          <!-- Exemple de ligne de données -->
+          <tr class="border-b border-[#e7ebf3] dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-900">
+            <td class="px-5 py-3 text-sm text-[#0d121b] dark:text-white">{{ $jury->code_jury }}</td>
+            <td class="px-5 py-3 text-sm text-[#0d121b] dark:text-white">{{ $jury->nom_jury }}</td>
+            <td class="px-5 py-3 text-sm text-[#0d121b] dark:text-white">{{ $jury->promotion }}</td>
+            <td class="px-5 py-3 text-sm text-[#0d121b] dark:text-white">{{ $jury->semestre }}</td>
+            <td class="px-5 py-3 text-sm text-[#0d121b] dark:text-white">{{ $jury->session }}</td>
+            <td class="px-5 py-3 text-sm text-[#0d121b] dark:text-white">{{ $jury->annee_academique }}</td>
+            <td class="px-5 py-3 text-sm text-[#0d121b] dark:text-white">{{ $jury->date }}</td>
+            <td class="px-5 py-3 text-sm text-[#0d121b] dark:text-white">{{ $jury->statut }}</td>
+            <td class="px-5 py-3 text-sm text-[#0d121b] dark:text-white">{{ $jury->president }}</td>
+            <td class="px-5 py-3 text-sm text-[#0d121b] dark:text-white">{{ $jury->secretaire }}</td>
+            <td class="px-5 py-3 text-sm text-[#0d121b] dark:text-white">{{ $jury->remarques}}</td>
+            <td class="px-5 py-3 text-sm text-right">
+              <button class="text-primary hover:underline">Voir Détails</button>
+            </td>
+          </tr>
+          @endforeach
+        </tbody>
+
 </div>
 </div>
 
