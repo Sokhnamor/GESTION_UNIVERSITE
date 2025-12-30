@@ -9,11 +9,7 @@ class ControllerJury extends Controller
 {
     //
      public function create()
-<<<<<<< HEAD
-    {   
-=======
     {
->>>>>>> mor
         return view('pages.jury');
     }
 
