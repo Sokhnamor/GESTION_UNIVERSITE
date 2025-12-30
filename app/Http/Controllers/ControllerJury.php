@@ -9,7 +9,11 @@ class ControllerJury extends Controller
 {
     //
      public function create()
+<<<<<<< HEAD
     {   
+=======
+    {
+>>>>>>> mor
         return view('pages.jury');
     }
 
@@ -18,7 +22,6 @@ class ControllerJury extends Controller
      */
     public function store(Request $request)
     {
-        
         $jury = new ModelJury();
         $jury->code_jury = $request->input('code_jury');
         $jury->nom_jury = $request->input('nom_jury');
@@ -26,28 +29,13 @@ class ControllerJury extends Controller
         $jury->semestre = $request->input('semestre');
         $jury->session = $request->input('session');
         $jury->annee_academique = $request->input('annee_academique');
-        $jury->date = $request->input('date_deliberation');
+        $jury->date_deliberation = $request->input('date_deliberation');
         $jury->statut = $request->input('statut');
         $jury->president = $request->input('president');
         $jury->secretaire = $request->input('secretaire');
         $jury->membres = $request->input('membres');
         $jury->remarques = $request->input('remarques');
         $jury->save();
-
-        // ModelJury::create([$request->only([
-        //     'code_jury',
-        //     'nom_jury',
-        //     'promotion',
-        //     'semestre',
-        //     'session',
-        //     'annee-academique',
-        //     'date',
-        //     'statut',
-        //     'president',
-        //     'secretaire',
-        //     'membres',
-        //     'remarques',
-        // ])]);
 
         // Redirect to a success page or return a response
         return redirect()->route('export')->with('success', 'Jury créé avec succès.');
