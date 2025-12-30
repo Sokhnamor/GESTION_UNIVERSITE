@@ -104,7 +104,7 @@
                     </button>
 <button class="flex items-center justify-center gap-2 px-5 py-2.5 rounded-lg bg-primary text-white font-bold text-sm shadow-lg shadow-primary/25 hover:bg-primary-hover transition-all">
 <span class="material-symbols-outlined text-[20px]">add</span>
-                        Nouveau Module
+                        Nouvelle Filiere
                     </button>
 </div>
 </div>
