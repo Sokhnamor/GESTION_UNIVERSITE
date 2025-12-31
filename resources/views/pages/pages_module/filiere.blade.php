@@ -319,15 +319,20 @@
 </div>
 </div>
 <!-- Form Body -->
+<form action="" method="post">
+ @csrf
 <div class="p-6 space-y-5">
 <div class="grid grid-cols-2 gap-4">
 <div class="space-y-1.5">
 <label class="text-xs font-bold text-text-sec-light dark:text-text-sec-dark uppercase tracking-wide">Code</label>
-<input class="w-full rounded-lg border-border-light dark:border-border-dark bg-background-light dark:bg-slate-800 text-sm font-medium focus:border-primary focus:ring-primary" type="text" value="INF-204"/>
+<input class="w-full rounded-lg border-border-light dark:border-border-dark bg-background-light dark:bg-slate-800 text-sm font-medium focus:border-primary focus:ring-primary"
+ type="text" value="INF-204" name="code"/>
 </div>
 <div class="space-y-1.5">
 <label class="text-xs font-bold text-text-sec-light dark:text-text-sec-dark uppercase tracking-wide">Nom Filiere</label>
-<select class="w-full rounded-lg border-border-light dark:border-border-dark bg-background-light dark:bg-slate-800 text-sm font-medium focus:border-primary focus:ring-primary">
+<select 
+name="nom_filiere"
+class="w-full rounded-lg border-border-light dark:border-border-dark bg-background-light dark:bg-slate-800 text-sm font-medium focus:border-primary focus:ring-primary">
 <option>Santé communautaire</option>
 <option>Droit</option>
 <option selected="">Informatique</option>
@@ -337,13 +342,16 @@
 </div>
 </div>
 <div class="space-y-1.5">
-<label class="text-xs font-bold text-text-sec-light dark:text-text-sec-dark uppercase tracking-wide">Departement</label>
-<input class="w-full rounded-lg border-border-light dark:border-border-dark bg-background-light dark:bg-slate-800 text-sm font-medium focus:border-primary focus:ring-primary" type="text" value="STIC"/>
+<label class="text-xs font-bold text-text-sec-light dark:text-text-sec-dark uppercase tracking-wide">Departement</label> 
+<input class="w-full rounded-lg border-border-light dark:border-border-dark bg-background-light dark:bg-slate-800 text-sm font-medium focus:border-primary focus:ring-primary"
+ type="text" value="STIC" name="departement"/>
 </div>
 <div class="space-y-1.5">
 <label class="text-xs font-bold text-text-sec-light dark:text-text-sec-dark uppercase tracking-wide">Niveau d'étude</label>
 <div class="relative">
-<select class="w-full appearance-none rounded-lg border-border-light dark:border-border-dark bg-background-light dark:bg-slate-800 py-2.5 pl-3 pr-8 text-sm font-medium focus:border-primary focus:ring-primary">
+<select 
+name="niveau_etude"
+class="w-full appearance-none rounded-lg border-border-light dark:border-border-dark bg-background-light dark:bg-slate-800 py-2.5 pl-3 pr-8 text-sm font-medium focus:border-primary focus:ring-primary">
 <option selected="">Licence</option>
 <option>Mastre</option>
 
@@ -353,17 +361,7 @@
 </span>
 </div>
 </div>
-{{-- <div class="space-y-1.5">
-<label class="text-xs font-bold text-text-sec-light dark:text-text-sec-dark uppercase tracking-wide">Responsable</label>
-<div class="flex items-center gap-2 rounded-lg border border-border-light dark:border-border-dark bg-background-light dark:bg-slate-800 p-2">
-<div class="size-8 rounded-full bg-cover bg-center" data-alt="Avatar professeur sélectionné" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuADMYMYCIeyPiZ3us6uDdm1nnHC_7vBA9qQOtaf9-zZdc4zpajEuaQxJZJrki_CEeXipo8IHk-QTSokcv_BM4vrzhvKTXQcIg2Pp-ZBAAUJGmKLxNNpHeAex0X9RCvISHbMSUoc0Ut_l_DvYxXAnOBCZK9nXhVBy_B32cwfSdmL3wCja_OuztVqRHzNH3_Ew-OIPiVEofzOjCej7myyXVkp80HrK2DhX5QJhimOd7wkFJn1Q2aVQyFHcAccAL547eAmF-DjCWMt_RE');"></div>
-<div class="flex-1 min-w-0">
-<p class="truncate text-sm font-bold">Pr. Kanouté</p>
-<p class="truncate text-xs text-text-sec-light">Dépt. Informatique</p>
-</div>
-<button class="text-primary hover:text-primary-hover text-sm font-medium px-2">Changer</button>
-</div>
-</div> --}}
+
 <div class="space-y-1.5">
 <label class="flex items-center gap-3 p-3 rounded-lg border border-border-light dark:border-border-dark hover:bg-background-light dark:hover:bg-slate-800 cursor-pointer transition-colors">
 <input checked="" class="size-4 rounded border-gray-300 text-primary focus:ring-primary" type="checkbox"/>
@@ -376,12 +374,17 @@
 </div> 
 <!-- Form Footer -->
 <div class="flex items-center justify-end gap-3 border-t border-border-light dark:border-border-dark bg-background-light/50 dark:bg-slate-800/50 px-6 py-4 rounded-b-xl">
-<button class="px-4 py-2 text-sm font-bold text-text-sec-light hover:text-text-main-light dark:hover:text-white transition-colors">Annuler</button>
-<button class="rounded-lg bg-primary px-6 py-2 text-sm font-bold text-white shadow-lg shadow-primary/20 hover:bg-primary-hover transition-all">Enregistrer</button>
+<button
+type="submit"
+class="px-4 py-2 text-sm font-bold text-text-sec-light hover:text-text-main-light dark:hover:text-white transition-colors">Annuler</button>
+<button
+type="submit"
+class="rounded-lg bg-primary px-6 py-2 text-sm font-bold text-white shadow-lg shadow-primary/20 hover:bg-primary-hover transition-all">Enregistrer</button>
 </div> 
 </div>
 </div>
 </div>
 </main>
 </div>
+</form>
 </body></html>

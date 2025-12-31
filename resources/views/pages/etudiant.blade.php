@@ -34,7 +34,7 @@
       <label class="block text-sm font-medium mb-2">Matricule</label>
       <input
         name="matricule"
-        placeholder="2024-INF-001"
+        placeholder="240255"
         class="w-full h-12 rounded-lg border border-[#e7ebf3] dark:border-gray-700 bg-[#f8f9fc] dark:bg-white/5 px-4 text-sm focus:border-primary focus:ring-1 focus:ring-primary outline-none"
       >
     </div>
@@ -44,7 +44,7 @@
       <label class="block text-sm font-medium mb-2">Numéro étudiant</label>
       <input
         name="numero_etudiant"
-        placeholder="ETU-45879"
+        placeholder="ETU-240155"
         class="w-full h-12 rounded-lg border border-[#e7ebf3] dark:border-gray-700 bg-[#f8f9fc] dark:bg-white/5 px-4 text-sm focus:border-primary focus:ring-1 focus:ring-primary outline-none"
       >
     </div>

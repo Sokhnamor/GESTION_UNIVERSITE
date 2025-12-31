@@ -64,8 +64,14 @@
             <td class="px-5 py-3 text-sm text-[#0d121b] dark:text-white">{{ $etudiant->promotion }}</td>
             <td class="px-5 py-3 text-sm text-[#0d121b] dark:text-white">Actif</td>
             <td class="px-5 py-3 text-sm text-right">
-              <button class="text-blue-600 hover:underline mr-4">Éditer</button>
-              <button class="text-red-600 hover:underline">Supprimer</button>
+              <div class="flex space-x-2">
+                <button class="size-9 rounded-full bg-[#e7ebf3] dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors flex items-center justify-center">
+                        <span class="material-symbols-outlined text-[20px]">edit</span>
+                </button>
+                <button class="size-9 rounded-full bg-red-50 dark:bg-red-900/20 hover:bg-red-100 dark:hover:bg-red-900/30 transition-colors flex items-center justify-center">
+                        <span class="material-symbols-outlined text-[20px] text-red-500">delete</span>
+                </button>
+              </div>
             </td>
           </tr>
           @endforeach

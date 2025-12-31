@@ -20,6 +20,8 @@ use App\Http\Controllers\scolarite;
 use App\Http\Controllers\rapportjury;
 use App\Http\Controllers\listeEtudiant;
 use App\Http\Controllers\pagesModule;
+use App\Http\Controllers\pagesModule2;
+use App\Http\Controllers\pagesModule1;
 
 
 
@@ -54,8 +56,15 @@ route::get('/liste-etudiant', [listeEtudiant::class, 'liste'])->name('liste-etud
 
 //app-bar module
 route::get('/filiere', [pagesModule::class, 'filiere'])->name('filiere');
-route::get('/responsable', [pagesModule::class, 'responsable'])->name('responsable');
-route::get('/semestre', [pagesModule::class, 'semestre'])->name('semestre');
+route::post('/filiere', [pagesModule::class, 'store'])->name('filiere.store');
+
+
+route::get('/responsable', [pagesModule2::class, 'responsable'])->name('responsable');
+route::post('/responsable', [pagesModule2::class, 'store'])->name('responsable.store');
+
+
+route::get('/semestre', [pagesModule1::class, 'semestre'])->name('semestre');
+route::post('/semestre', [pagesModule1::class, 'store'])->name('semestre.store');
 
 
    

@@ -319,15 +319,20 @@
 </div>
 </div>
 <!-- Form Body -->
+<form action="" method="post">
+    @csrf
 <div class="p-6 space-y-5">
 <div class="grid grid-cols-2 gap-4">
 <div class="space-y-1.5">
 <label class="text-xs font-bold text-text-sec-light dark:text-text-sec-dark uppercase tracking-wide">Code</label>
-<input class="w-full rounded-lg border-border-light dark:border-border-dark bg-background-light dark:bg-slate-800 text-sm font-medium focus:border-primary focus:ring-primary" type="text" value="INF-204"/>
+<input class="w-full rounded-lg border-border-light dark:border-border-dark bg-background-light dark:bg-slate-800 text-sm font-medium focus:border-primary focus:ring-primary"
+ type="text" value="INF-204" name="code"/>
 </div>
 <div class="space-y-1.5">
 <label class="text-xs font-bold text-text-sec-light dark:text-text-sec-dark uppercase tracking-wide">Libellé</label>
-<select class="w-full rounded-lg border-border-light dark:border-border-dark bg-background-light dark:bg-slate-800 text-sm font-medium focus:border-primary focus:ring-primary">
+<select
+name="libelle"
+class="w-full rounded-lg border-border-light dark:border-border-dark bg-background-light dark:bg-slate-800 text-sm font-medium focus:border-primary focus:ring-primary">
 <option>Semestre 1</option>
 <option>Semestre 2</option>
 <option selected="">Semestre 3</option>
@@ -339,12 +344,15 @@
 </div>
 <div class="space-y-1.5">
 <label class="text-xs font-bold text-text-sec-light dark:text-text-sec-dark uppercase tracking-wide">Niveau</label>
-<input class="w-full rounded-lg border-border-light dark:border-border-dark bg-background-light dark:bg-slate-800 text-sm font-medium focus:border-primary focus:ring-primary" type="text" value="Licence 3"/>
+<input class="w-full rounded-lg border-border-light dark:border-border-dark bg-background-light dark:bg-slate-800 text-sm font-medium focus:border-primary focus:ring-primary" 
+type="text" value="Licence 3" name="niveau"/>
 </div>
 <div class="space-y-1.5">
 <label class="text-xs font-bold text-text-sec-light dark:text-text-sec-dark uppercase tracking-wide">Année Academique</label>
 <div class="relative">
-<select class="w-full appearance-none rounded-lg border-border-light dark:border-border-dark bg-background-light dark:bg-slate-800 py-2.5 pl-3 pr-8 text-sm font-medium focus:border-primary focus:ring-primary">
+<select 
+name="annee_academique"
+class="w-full appearance-none rounded-lg border-border-light dark:border-border-dark bg-background-light dark:bg-slate-800 py-2.5 pl-3 pr-8 text-sm font-medium focus:border-primary focus:ring-primary">
 <option selected="">2025 - 2026</option>
 <option>2024 - 2025</option>
 <option>2026 - 2027</option>
@@ -367,12 +375,17 @@
 </div> 
 <!-- Form Footer -->
 <div class="flex items-center justify-end gap-3 border-t border-border-light dark:border-border-dark bg-background-light/50 dark:bg-slate-800/50 px-6 py-4 rounded-b-xl">
-<button class="px-4 py-2 text-sm font-bold text-text-sec-light hover:text-text-main-light dark:hover:text-white transition-colors">Annuler</button>
-<button class="rounded-lg bg-primary px-6 py-2 text-sm font-bold text-white shadow-lg shadow-primary/20 hover:bg-primary-hover transition-all">Enregistrer</button>
+<button 
+type="submit"
+class="px-4 py-2 text-sm font-bold text-text-sec-light hover:text-text-main-light dark:hover:text-white transition-colors">Annuler</button>
+<button
+tube="submit"
+class="rounded-lg bg-primary px-6 py-2 text-sm font-bold text-white shadow-lg shadow-primary/20 hover:bg-primary-hover transition-all">Enregistrer</button>
 </div> -
 </div>
 </div>
 </div>
 </main>
 </div>
+</form>
 </body></html>

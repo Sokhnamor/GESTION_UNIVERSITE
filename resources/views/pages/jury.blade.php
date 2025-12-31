@@ -31,7 +31,7 @@
       <label class="block text-sm font-medium mb-2">Code Jury</label>
       <input
         name="code_jury"
-        placeholder="JURY-S5-2024-01"
+        placeholder="JURY-154"
         class="w-full h-12 rounded-lg border border-[#e7ebf3] dark:border-gray-700 bg-[#f8f9fc] dark:bg-white/5 px-4 text-sm focus:border-primary focus:ring-1 focus:ring-primary outline-none"
       >
     </div>
@@ -41,7 +41,7 @@
       <label class="block text-sm font-medium mb-2">Nom du Jury</label>
       <input
         name="nom_jury"
-        placeholder="Jury Semestre 5 - Informatique"
+        placeholder="Jury S5 - Informatique"
         class="w-full h-12 rounded-lg border border-[#e7ebf3] dark:border-gray-700 bg-[#f8f9fc] dark:bg-white/5 px-4 text-sm focus:border-primary focus:ring-1 focus:ring-primary outline-none"
       >
     </div>
