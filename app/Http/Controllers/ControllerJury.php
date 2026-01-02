@@ -25,7 +25,7 @@ class ControllerJury extends Controller
         $jury->semestre = $request->input('semestre');
         $jury->session = $request->input('session');
         $jury->annee_academique = $request->input('annee_academique');
-        $jury->date_deliberation = $request->input('date_deliberation');
+        $jury->date = $request->input('date_deliberation');
         $jury->statut = $request->input('statut');
         $jury->president = $request->input('president');
         $jury->secretaire = $request->input('secretaire');
