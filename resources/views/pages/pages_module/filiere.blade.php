@@ -333,11 +333,14 @@
 <select 
 name="nom_filiere"
 class="w-full rounded-lg border-border-light dark:border-border-dark bg-background-light dark:bg-slate-800 text-sm font-medium focus:border-primary focus:ring-primary">
-<option>Santé communautaire</option>
+{{-- <option>Santé communautaire</option>
 <option>Droit</option>
 <option selected="">Informatique</option>
 <option>Gestion</option>
-<option>Medecine</option>
+<option>Medecine</option> --}}
+<option selected="">Génie Logiciel</option>
+<option>Réseaux &amp; Télécoms</option>
+<option>Data Science</option>
 </select>
 </div>
 </div>

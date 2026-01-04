@@ -15,4 +15,9 @@ class semestre extends Model
         'annee_academique',
         
     ];
+
+     public function module(){
+        return $this->hasmany(module::class);
+    }
+
 }

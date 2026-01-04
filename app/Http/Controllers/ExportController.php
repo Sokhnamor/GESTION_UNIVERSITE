@@ -11,4 +11,8 @@ class ExportController extends Controller
         return view('pages.exports');
     }
 
+    public function store(){
+        
+    }
+
 }

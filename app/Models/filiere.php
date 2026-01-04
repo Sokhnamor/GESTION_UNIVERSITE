@@ -14,4 +14,9 @@ class filiere extends Model
         'departement',
         'niveau_etude',
     ];
+
+     public function module(){
+        return $this->hasmany(module::class);
+    }
+
 }

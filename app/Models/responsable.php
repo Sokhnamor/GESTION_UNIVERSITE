@@ -18,5 +18,9 @@ class responsable extends Model
         'departement',
     ];
 
+    public function module(){
+        return $this->hasmany(module::class);
+    }
+
 
 }

@@ -28,7 +28,11 @@ use App\Http\Controllers\pagesModule1;
 
 Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
 Route::put('/profile', [ProfileController::class, 'updatePassword'])->name('profile.update');
+
 route::get('/export', [ExportController::class, 'index'])->name('export');
+route::post('/export', [ExportController::class, 'store'])->name('export.store');
+
+
 Route::get('/grades-validation', [GradeValidationController::class, 'index'])->name('gradevalidation');
 
 
@@ -70,7 +74,12 @@ route::post('/semestre', [pagesModule1::class, 'store'])->name('semestre.store')
    
 //bassirou
 Route::get('/dashboard', [ControllerDashboard::class, 'board'])->name('dashboard');
+
+
 Route::get('/gestionModule', [ControllerGestionModule::class, 'module']) ->name('gestionModule'); 
+Route::post('/gestionModule', [ControllerGestionModule::class, 'store']) ->name('gestionModule.store'); 
+
+
 Route::get('/importation', [ControllerImportation::class, 'import']) ->name('importation'); 
 
 

@@ -318,33 +318,37 @@
 </div>
 </div>
 <!-- Form Body -->
+<form action="" method="post">
+    @csrf
 <div class="p-6 space-y-5">
 <div class="grid grid-cols-2 gap-4">
 <div class="space-y-1.5">
 <label class="text-xs font-bold text-text-sec-light dark:text-text-sec-dark uppercase tracking-wide">Code</label>
-<input class="w-full rounded-lg border-border-light dark:border-border-dark bg-background-light dark:bg-slate-800 text-sm font-medium focus:border-primary focus:ring-primary" type="text" value="INF-204"/>
+<input name="code"  class="w-full rounded-lg border-border-light dark:border-border-dark bg-background-light dark:bg-slate-800 text-sm font-medium focus:border-primary focus:ring-primary" type="text" value="INF-204"/>
 </div>
 <div class="space-y-1.5">
 <label class="text-xs font-bold text-text-sec-light dark:text-text-sec-dark uppercase tracking-wide">Semestre</label>
-<select class="w-full rounded-lg border-border-light dark:border-border-dark bg-background-light dark:bg-slate-800 text-sm font-medium focus:border-primary focus:ring-primary">
-<option>Semestre 1</option>
-<option>Semestre 2</option>
-<option selected="">Semestre 3</option>
-<option>Semestre 4</option>
+<select name="semestre" class="w-full rounded-lg border-border-light dark:border-border-dark bg-background-light dark:bg-slate-800 text-sm font-medium focus:border-primary focus:ring-primary">
+<option value="2">Semestre 1</option>
+<option value="3">Semestre 2</option>
+<option value="4" selected="">Semestre 3</option>
+<option value="5">Semestre 4</option>
+<option value="8">Semestre 5</option>
+<option value="9">Semestre 6</option>
 </select>
 </div>
 </div>
 <div class="space-y-1.5">
 <label class="text-xs font-bold text-text-sec-light dark:text-text-sec-dark uppercase tracking-wide">Intitulé du Module</label>
-<input class="w-full rounded-lg border-border-light dark:border-border-dark bg-background-light dark:bg-slate-800 text-sm font-medium focus:border-primary focus:ring-primary" type="text" value="Bases de Données Relationnelles"/>
+<input name="module" class="w-full rounded-lg border-border-light dark:border-border-dark bg-background-light dark:bg-slate-800 text-sm font-medium focus:border-primary focus:ring-primary" type="text" value="Bases de Données Relationnelles"/>
 </div>
 <div class="space-y-1.5">
 <label class="text-xs font-bold text-text-sec-light dark:text-text-sec-dark uppercase tracking-wide">Filière de rattachement</label>
 <div class="relative">
-<select class="w-full appearance-none rounded-lg border-border-light dark:border-border-dark bg-background-light dark:bg-slate-800 py-2.5 pl-3 pr-8 text-sm font-medium focus:border-primary focus:ring-primary">
-<option selected="">Génie Logiciel</option>
-<option>Réseaux &amp; Télécoms</option>
-<option>Data Science</option>
+<select name="filiere" class="w-full appearance-none rounded-lg border-border-light dark:border-border-dark bg-background-light dark:bg-slate-800 py-2.5 pl-3 pr-8 text-sm font-medium focus:border-primary focus:ring-primary">
+<option value="3" selected="">Génie Logiciel</option>
+<option value="4">Réseaux &amp; Télécoms</option>
+<option value="5">Data Science</option>
 </select>
 <span class="pointer-events-none absolute right-3 top-2.5 text-text-sec-light">
 <span class="material-symbols-outlined text-[20px]">expand_more</span>
@@ -364,7 +368,7 @@
 </div>
 <div class="space-y-1.5">
 <label class="flex items-center gap-3 p-3 rounded-lg border border-border-light dark:border-border-dark hover:bg-background-light dark:hover:bg-slate-800 cursor-pointer transition-colors">
-<input checked="" class="size-4 rounded border-gray-300 text-primary focus:ring-primary" type="checkbox"/>
+<input name="statut" checked="" class="size-4 rounded border-gray-300 text-primary focus:ring-primary" type="checkbox"/>
 <div class="flex-1">
 <span class="block text-sm font-bold">Module Actif</span>
 <span class="block text-xs text-text-sec-light">Visible pour les étudiants et professeurs</span>
@@ -375,11 +379,14 @@
 <!-- Form Footer -->
 <div class="flex items-center justify-end gap-3 border-t border-border-light dark:border-border-dark bg-background-light/50 dark:bg-slate-800/50 px-6 py-4 rounded-b-xl">
 <button class="px-4 py-2 text-sm font-bold text-text-sec-light hover:text-text-main-light dark:hover:text-white transition-colors">Annuler</button>
-<button class="rounded-lg bg-primary px-6 py-2 text-sm font-bold text-white shadow-lg shadow-primary/20 hover:bg-primary-hover transition-all">Enregistrer</button>
+<button 
+type="submit"
+class="rounded-lg bg-primary px-6 py-2 text-sm font-bold text-white shadow-lg shadow-primary/20 hover:bg-primary-hover transition-all">Enregistrer</button>
 </div>
 </div>
 </div>
 </div>
 </main>
 </div>
+</form>
 </body></html>
