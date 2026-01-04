@@ -169,22 +169,23 @@
 </thead>
 <tbody class="divide-y divide-border-light dark:divide-border-dark">
 <!-- Row 1 (Active) -->
+@foreach ($modules as $module)
 <tr class="group hover:bg-primary/5 transition-colors cursor-pointer border-l-4 border-l-transparent hover:border-l-primary">
-<td class="px-6 py-4 font-mono font-medium text-text-sec-light dark:text-text-sec-dark">INF-101</td>
+<td class="px-6 py-4 font-mono font-medium text-text-sec-light dark:text-text-sec-dark">{{ $module->code}}</td>
 <td class="px-6 py-4">
 <div class="flex flex-col">
-<span class="font-bold text-text-main-light dark:text-text-main-dark">Algorithmique I</span>
-<span class="text-xs text-text-sec-light dark:text-text-sec-dark">Génie Informatique</span>
+<span class="font-bold text-text-main-light dark:text-text-main-dark">{{ $module->module }}</span>
+<span class="text-xs text-text-sec-light dark:text-text-sec-dark">{{ $module->filiere->nom }}</span>
 </div>
 </td>
 <td class="px-6 py-4">
 <div class="flex items-center gap-2">
 <div class="size-6 rounded-full bg-cover bg-center" data-alt="Photo professeur" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuByP0XYYp2Nlj89HJ-HmKj2JDakdEo9DDBwARC6qte1M-K1dLBPgrsGF_8STPl2oOdRFwWmNzf2kui4l75ZiztSPPBcxb0NEoP1WhOQV6wBT6JTp8v2ep9_gVmBPM5JtyLn6uSdXwXRs18wTKiWXEiJ-2SHRZYvz3DUbi_rJsXZTPFR4Sahqfri50ZzdqomIc6oamIaXg_5nO-WA51xwNPddglSfYujC-3zjVi7YvuQgaDGA22WYM9yvhkfXXmVtG4gdqYtQ0mVcU4');"></div>
-<span class="font-medium text-text-main-light dark:text-text-main-dark">Pr. Benali</span>
+<span class="font-medium text-text-main-light dark:text-text-main-dark">{{ $module->responsable->nom_prenom }}</span>
 </div>
 </td>
 <td class="px-6 py-4">
-<span class="inline-flex items-center rounded-md bg-slate-100 dark:bg-slate-800 px-2 py-1 text-xs font-medium text-slate-600 dark:text-slate-400 ring-1 ring-inset ring-slate-500/10">S1</span>
+<span class="inline-flex items-center rounded-md bg-slate-100 dark:bg-slate-800 px-2 py-1 text-xs font-medium text-slate-600 dark:text-slate-400 ring-1 ring-inset ring-slate-500/10">{{ $module->semestre->libelle }}</span>
 </td>
 <td class="px-6 py-4">
 <span class="inline-flex items-center gap-1 rounded-full bg-green-50 dark:bg-green-900/20 px-2 py-1 text-xs font-medium text-green-700 dark:text-green-400 ring-1 ring-inset ring-green-600/20">
@@ -197,93 +198,8 @@
 </button>
 </td>
 </tr>
-<!-- Row 2 -->
-<tr class="group hover:bg-primary/5 transition-colors cursor-pointer border-l-4 border-l-transparent hover:border-l-primary bg-primary/5 border-l-primary">
-<td class="px-6 py-4 font-mono font-medium text-text-sec-light dark:text-text-sec-dark">INF-204</td>
-<td class="px-6 py-4">
-<div class="flex flex-col">
-<span class="font-bold text-text-main-light dark:text-text-main-dark">Bases de Données</span>
-<span class="text-xs text-text-sec-light dark:text-text-sec-dark">Génie Logiciel</span>
-</div>
-</td>
-<td class="px-6 py-4">
-<div class="flex items-center gap-2">
-<div class="size-6 rounded-full bg-cover bg-center" data-alt="Photo professeur" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCkAPlc_M5GuYSrA6FV08jQ6iO1TSWH6dwc9RTpDWv034w825WmIPY2duUOyUzUvDJ7uYdpJm7NhzHKMg0LNrcyDNCNAGAbfTjDM34r20Q7DPL6spPeLTVPYjC8kiGD6t3gjiBKDhWZHBm_T5yrsWanoGwoKrGVLVXfrkFKX_pyqQUzs7lBsiNUdPaE5y7VsuAsO13i2hSlWdv62aPOFUF8pok-Bb2-wKoRijFWORD4bMtLv9wiceN2Q-H4BS-6JyIMl7zIT9RwHNc');"></div>
-<span class="font-medium text-text-main-light dark:text-text-main-dark">Pr. Mansouri</span>
-</div>
-</td>
-<td class="px-6 py-4">
-<span class="inline-flex items-center rounded-md bg-slate-100 dark:bg-slate-800 px-2 py-1 text-xs font-medium text-slate-600 dark:text-slate-400 ring-1 ring-inset ring-slate-500/10">S3</span>
-</td>
-<td class="px-6 py-4">
-<span class="inline-flex items-center gap-1 rounded-full bg-green-50 dark:bg-green-900/20 px-2 py-1 text-xs font-medium text-green-700 dark:text-green-400 ring-1 ring-inset ring-green-600/20">
-<span class="size-1.5 rounded-full bg-green-600 dark:bg-green-400"></span> Actif
-                                            </span>
-</td>
-<td class="px-6 py-4 text-right">
-<button class="text-text-sec-light dark:text-text-sec-dark hover:text-primary transition-colors">
-<span class="material-symbols-outlined text-[20px]">more_vert</span>
-</button>
-</td>
-</tr>
-<!-- Row 3 -->
-<tr class="group hover:bg-primary/5 transition-colors cursor-pointer border-l-4 border-l-transparent hover:border-l-primary">
-<td class="px-6 py-4 font-mono font-medium text-text-sec-light dark:text-text-sec-dark">MGT-301</td>
-<td class="px-6 py-4">
-<div class="flex flex-col">
-<span class="font-bold text-text-main-light dark:text-text-main-dark">Management de Projet</span>
-<span class="text-xs text-text-sec-light dark:text-text-sec-dark">Management</span>
-</div>
-</td>
-<td class="px-6 py-4">
-<div class="flex items-center gap-2">
-<div class="flex size-6 items-center justify-center rounded-full bg-orange-100 dark:bg-orange-900/30 text-orange-600 dark:text-orange-400 text-xs font-bold">?</div>
-<span class="font-medium text-text-sec-light dark:text-text-sec-dark italic">Non assigné</span>
-</div>
-</td>
-<td class="px-6 py-4">
-<span class="inline-flex items-center rounded-md bg-slate-100 dark:bg-slate-800 px-2 py-1 text-xs font-medium text-slate-600 dark:text-slate-400 ring-1 ring-inset ring-slate-500/10">S5</span>
-</td>
-<td class="px-6 py-4">
-<span class="inline-flex items-center gap-1 rounded-full bg-yellow-50 dark:bg-yellow-900/20 px-2 py-1 text-xs font-medium text-yellow-700 dark:text-yellow-400 ring-1 ring-inset ring-yellow-600/20">
-<span class="size-1.5 rounded-full bg-yellow-600 dark:bg-yellow-400"></span> En attente
-                                            </span>
-</td>
-<td class="px-6 py-4 text-right">
-<button class="text-text-sec-light dark:text-text-sec-dark hover:text-primary transition-colors">
-<span class="material-symbols-outlined text-[20px]">more_vert</span>
-</button>
-</td>
-</tr>
-<!-- Row 4 -->
-<tr class="group hover:bg-primary/5 transition-colors cursor-pointer border-l-4 border-l-transparent hover:border-l-primary opacity-60">
-<td class="px-6 py-4 font-mono font-medium text-text-sec-light dark:text-text-sec-dark">ANGL-101</td>
-<td class="px-6 py-4">
-<div class="flex flex-col">
-<span class="font-bold text-text-main-light dark:text-text-main-dark">Anglais Technique</span>
-<span class="text-xs text-text-sec-light dark:text-text-sec-dark">Tronc Commun</span>
-</div>
-</td>
-<td class="px-6 py-4">
-<div class="flex items-center gap-2">
-<div class="size-6 rounded-full bg-cover bg-center" data-alt="Photo professeur" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCFGsOWsmyVgIzNGAc0CUTlXCG7x1Jo-EDdxMF4MvzqAQCkKm1sJT85CrCu_Zli6-O7zuMb-QOhoA0SXGpiE0LG_iRk5L58qUdLHsQrUmLfuqCib3MVKWSmytl_aydUDXdLY9BA2bPvg8iQAbuBpOzLO35CsKoDFeTTSxHY68a-M1uMwFihmAC0ywQFJNkLDzCdviGO6ptHD_jIMmxHvCyO5j1rmxvdZX_Zo0cF-8QziwnWut_EhWZcmnHtlfhfEKS0cQCf8fDSQak');"></div>
-<span class="font-medium text-text-main-light dark:text-text-main-dark">Mme. Dubois</span>
-</div>
-</td>
-<td class="px-6 py-4">
-<span class="inline-flex items-center rounded-md bg-slate-100 dark:bg-slate-800 px-2 py-1 text-xs font-medium text-slate-600 dark:text-slate-400 ring-1 ring-inset ring-slate-500/10">S1</span>
-</td>
-<td class="px-6 py-4">
-<span class="inline-flex items-center gap-1 rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-1 text-xs font-medium text-slate-600 dark:text-slate-400 ring-1 ring-inset ring-slate-500/10">
-                                                Archivé
-                                            </span>
-</td>
-<td class="px-6 py-4 text-right">
-<button class="text-text-sec-light dark:text-text-sec-dark hover:text-primary transition-colors">
-<span class="material-symbols-outlined text-[20px]">more_vert</span>
-</button>
-</td>
-</tr>
+@endforeach
+
 </tbody>
 </table>
 </div>

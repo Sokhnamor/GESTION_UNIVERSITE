@@ -11,8 +11,9 @@ use Illuminate\Http\Request;
 class ControllerGestionModule extends Controller
 {
     public function module()
-    {
-        return view('gestionModule');
+    {   
+        $modules = module::with(['filiere', 'semestre', 'responsable'])->get();
+        return view('gestionModule' , compact('modules'));
     }
 
 
