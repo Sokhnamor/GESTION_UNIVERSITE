@@ -259,6 +259,10 @@
 <input name="module" class="w-full rounded-lg border-border-light dark:border-border-dark bg-background-light dark:bg-slate-800 text-sm font-medium focus:border-primary focus:ring-primary" type="text" value="Bases de Données Relationnelles"/>
 </div>
 <div class="space-y-1.5">
+<label class="text-xs font-bold text-text-sec-light dark:text-text-sec-dark uppercase tracking-wide">Coefficient</label>
+<input name="coef" class="w-full rounded-lg border-border-light dark:border-border-dark bg-background-light dark:bg-slate-800 text-sm font-medium focus:border-primary focus:ring-primary" type="number" value="1"/>
+</div>
+<div class="space-y-1.5">
 <label class="text-xs font-bold text-text-sec-light dark:text-text-sec-dark uppercase tracking-wide">Filière de rattachement</label>
 <div class="relative">
 <select name="filiere" class="w-full appearance-none rounded-lg border-border-light dark:border-border-dark bg-background-light dark:bg-slate-800 py-2.5 pl-3 pr-8 text-sm font-medium focus:border-primary focus:ring-primary">
