@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('promotion')->unique();
             $table->string('semestre')->nullable(); 
             $table->string('session')->nullable();
-            $table->string('annee-academique')->nullable();
+            $table->string('annee_academique')->nullable();
             $table->string('date')->nullable();
             $table->string('statut')->nullable();
             $table->string('president')->nullable();
