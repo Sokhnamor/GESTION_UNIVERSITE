@@ -21,6 +21,7 @@ class module extends Model
         'semestre_code',
         'filiere_code',
         'responsable_code',
+        'coef'
 
     ];
 
