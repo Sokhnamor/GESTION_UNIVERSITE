@@ -4,6 +4,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ControllerImportation;
+use App\Http\Controllers\NoteController;
 use App\Http\Controllers\ControllerDashboard;
 use App\Http\Controllers\ExportController;
 use App\Http\Controllers\ControllerGestionModule;
@@ -81,6 +82,7 @@ Route::post('/gestionModule', [ControllerGestionModule::class, 'store']) ->name(
 
 
 Route::get('/importation', [ControllerImportation::class, 'import']) ->name('importation'); 
+Route::post('/importation', [NoteController::class, 'import'])->name('importation.store');
 
 
    

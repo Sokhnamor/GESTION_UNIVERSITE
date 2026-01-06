@@ -139,8 +139,26 @@
 </div>
 </div>
 <!-- Dashed Area -->
+ <form class="flex flex-col gap-5" method="post" action="{{ route('importation.store') }}" enctype="multipart/form-data">
+    @csrf
+    <!-- j'affiche les erreur -->
+    @if ($errors->any())
+        <div class="mb-4 p-4 bg-red-50 border border-red-200 rounded-lg">
+            <ul class="list-disc list-inside text-sm text-red-600">
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
+    <!-- j'affiche le message success -->
+    @if (session('success'))
+        <div class="mb-4 p-4 bg-green-50 border border-green-200 rounded-lg">
+            <p class="text-sm text-green-600">{{ session('success') }}</p>
+        </div>
+    @endif
 <div class="flex-1 flex flex-col items-center justify-center gap-6 rounded-lg border-2 border-dashed border-[#cfd7e7] dark:border-gray-600 bg-[#f8f9fc] dark:bg-gray-800/50 px-6 py-10 transition-colors hover:border-primary/50 hover:bg-primary/5 group cursor-pointer relative">
-<input class="absolute inset-0 w-full h-full opacity-0 cursor-pointer z-10" multiple="" type="file"/>
+<input name="file" class="absolute inset-0 w-full h-full opacity-0 cursor-pointer z-10" type="file" accept=".xlsx,.xls,.csv,.pdf"/>
 <div class="size-16 rounded-full bg-white dark:bg-gray-700 shadow-sm flex items-center justify-center text-primary group-hover:scale-110 transition-transform duration-200">
 <span class="material-symbols-outlined !text-[32px]">cloud_upload</span>
 </div>
@@ -211,12 +229,12 @@
 <p class="text-xs text-[#4c669a] dark:text-gray-400">Ces informations seront liées aux notes extraites.</p>
 </div>
 </div>
-<form class="flex flex-col gap-5">
+
 <!-- Department -->
 <div class="flex flex-col gap-1.5">
 <label class="text-sm font-semibold text-[#0d121b] dark:text-white">Département</label>
 <div class="relative">
-<select class="w-full h-12 rounded-lg border border-[#cfd7e7] dark:border-gray-600 bg-[#f8f9fc] dark:bg-gray-800 text-[#0d121b] dark:text-white px-4 appearance-none focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all">
+<select name="departement" class="w-full h-12 rounded-lg border border-[#cfd7e7] dark:border-gray-600 bg-[#f8f9fc] dark:bg-gray-800 text-[#0d121b] dark:text-white px-4 appearance-none focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all">
 <option disabled="" selected="" value="">Sélectionner un département</option>
 <option value="info">Informatique</option>
 <option value="math">Mathématiques</option>
@@ -233,11 +251,11 @@
 <div class="flex flex-col gap-1.5 flex-1">
 <label class="text-sm font-semibold text-[#0d121b] dark:text-white">Filière</label>
 <div class="relative">
-<select class="w-full h-12 rounded-lg border border-[#cfd7e7] dark:border-gray-600 bg-[#f8f9fc] dark:bg-gray-800 text-[#0d121b] dark:text-white px-4 appearance-none focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all">
+<select name="filiere" class="w-full h-12 rounded-lg border border-[#cfd7e7] dark:border-gray-600 bg-[#f8f9fc] dark:bg-gray-800 text-[#0d121b] dark:text-white px-4 appearance-none focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all">
 <option disabled="" selected="" value="">Filière</option>
-<option value="gl">Génie Logiciel</option>
-<option value="bd">Big Data</option>
-<option value="se">Systèmes Embarqués</option>
+<option value="Génie Logiciel">Génie Logiciel</option>
+<option value="Big Data">Big Data</option>
+<option value="Systèmes Embarqués">Systèmes Embarqués</option>
 </select>
 <div class="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-[#4c669a]">
 <span class="material-symbols-outlined">expand_more</span>
@@ -247,7 +265,7 @@
 <div class="flex flex-col gap-1.5 w-1/3">
 <label class="text-sm font-semibold text-[#0d121b] dark:text-white">Semestre</label>
 <div class="relative">
-<select class="w-full h-12 rounded-lg border border-[#cfd7e7] dark:border-gray-600 bg-[#f8f9fc] dark:bg-gray-800 text-[#0d121b] dark:text-white px-4 appearance-none focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all">
+<select name="semestre" class="w-full h-12 rounded-lg border border-[#cfd7e7] dark:border-gray-600 bg-[#f8f9fc] dark:bg-gray-800 text-[#0d121b] dark:text-white px-4 appearance-none focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all">
 <option disabled="" selected="" value="">S1</option>
 <option value="s1">S1</option>
 <option value="s2">S2</option>
@@ -261,25 +279,40 @@
 </div>
 </div>
 <!-- Module -->
+ <div class="grid grid-cols-2 gap-4">
+
 <div class="flex flex-col gap-1.5">
 <label class="text-sm font-semibold text-[#0d121b] dark:text-white">Module</label>
 <div class="relative">
-<select class="w-full h-12 rounded-lg border border-[#cfd7e7] dark:border-gray-600 bg-[#f8f9fc] dark:bg-gray-800 text-[#0d121b] dark:text-white px-4 appearance-none focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all">
-<option disabled="" selected="" value="">Choisir un module</option>
-<option value="algo">Algorithmique Avancée</option>
-<option value="db">Base de Données Relationnelles</option>
-<option value="web">Développement Web</option>
+<select name="module" class="w-full h-12 rounded-lg border border-[#cfd7e7] dark:border-gray-600 bg-[#f8f9fc] dark:bg-gray-800 text-[#0d121b] dark:text-white px-4 appearance-none focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all">
+<option disabled=""  value="">Choisir un module</option>
+<option value="Algorithmique Avancée">Algorithmique Avancée</option>
+<option value="Base de Données Relationnelles">Base de Données Relationnelles</option>
+<option value="Développement Web">Développement Web</option>
 </select>
 <div class="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-[#4c669a]">
 <span class="material-symbols-outlined">expand_more</span>
 </div>
 </div>
 </div>
+<!-- Session -->
+ <div class="flex flex-col gap-1.5">
+<label class="text-sm font-semibold text-[#0d121b] dark:text-white">Session</label>
+<div class="relative">
+<select name="session" class="w-full h-12 rounded-lg border border-[#cfd7e7] dark:border-gray-600 bg-[#f8f9fc] dark:bg-gray-800 text-[#0d121b] dark:text-white px-4 appearance-none focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all">
+<option disabled="" selected="" value="">Choisir une session</option>
+<option value="Normale">Normale</option>
+<option value="Rattrapage">Rattrapage</option>
+</select>
+</div>
+</div>
+</div>
+
 <!-- Date d'examen -->
 <div class="flex flex-col gap-1.5">
-<label class="text-sm font-semibold text-[#0d121b] dark:text-white">Date de l'examen</label>
+<label class="text-sm font-semibold text-[#0d121b] dark:text-white" >Date de l'examen</label>
 <div class="relative">
-<input class="w-full h-12 rounded-lg border border-[#cfd7e7] dark:border-gray-600 bg-[#f8f9fc] dark:bg-gray-800 text-[#0d121b] dark:text-white px-4 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all placeholder:text-[#4c669a]" type="date"/>
+<input name="date_examen" class="w-full h-12 rounded-lg border border-[#cfd7e7] dark:border-gray-600 bg-[#f8f9fc] dark:bg-gray-800 text-[#0d121b] dark:text-white px-4 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all placeholder:text-[#4c669a]" type="date"/>
 </div>
 </div>
 <!-- Apply to all checkbox -->
@@ -293,6 +326,11 @@
 <label class="text-sm text-[#0d121b] dark:text-white cursor-pointer select-none" for="apply-all">
                                     Appliquer ces infos à tous les fichiers
                                 </label>
+</div>
+
+<!-- submit -->
+<div class="flex justify-end">
+<button type="submit" class="bg-primary text-white py-3 px-6 rounded-lg hover:bg-primary-focus transition-all">Enregistrer</button>
 </div>
 </form>
 </div>

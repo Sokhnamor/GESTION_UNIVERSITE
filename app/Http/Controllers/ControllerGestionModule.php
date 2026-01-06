@@ -24,6 +24,7 @@ class ControllerGestionModule extends Controller
         $module->code = $request->input('code');
         $module->module = $request->input('module');
         $module->statut = $request->input('statut');
+        $module->coef=$request->input('coef');
         // $module->semestre_code = $request->input('semestre');
         // $module->filiere_code = $request->input('filiere');
         $module->responsable_code = 1;

@@ -156,51 +156,28 @@
 
           <tbody class="text-sm text-[#0d121b] dark:text-gray-200">
             @php
-              $rows = [
-                ['2023-INF-001','Awa DIOP','UE INF301','Algo Avancée',4,'14.50','VALIDÉE'],
-                ['2023-INF-002','Mamadou NDIAYE','UE INF302','Bases de Données',4,'16.00','VALIDÉE'],
-                ['2023-INF-003','Fatou SARR','UE MAT205','Proba & Stats',3,'10.25','À VALIDER'],
-                ['2023-INF-004','Cheikh BA','UE ANG101','Anglais Technique',2,'15.00','VALIDÉE'],
-                ['2023-INF-005','Aminata FALL','UE PROJ30','Projet Tutoré',5,'17.50','VALIDÉE'],
-                ['2023-INF-006','Ibrahima DIALLO','UE INF305','Réseaux',3,'08.00','ANOMALIE'],
-                ['2023-INF-007','Khady GUEYE','UE INF306','Sécurité',3,'19.00','À VALIDER'],
-                ['2023-INF-008','Ousmane SECK','UE INF307','Web Laravel',4,'13.25','VALIDÉE'],
-                ['2023-INF-009','Marième CISSE','UE INF308','Systèmes',3,'11.75','VALIDÉE'],
-                ['2023-INF-010','Abdoulaye SOW','UE INF309','IA',4,'07.50','ANOMALIE'],
-                // Duplique pour “beaucoup de notes”
-                ['2023-INF-011','Awa DIOP','UE INF302','Bases de Données',4,'15.25','VALIDÉE'],
-                ['2023-INF-012','Mamadou NDIAYE','UE INF301','Algo Avancée',4,'12.00','À VALIDER'],
-                ['2023-INF-013','Fatou SARR','UE INF307','Web Laravel',4,'16.75','VALIDÉE'],
-                ['2023-INF-014','Cheikh BA','UE MAT205','Proba & Stats',3,'09.50','À VALIDER'],
-                ['2023-INF-015','Aminata FALL','UE ANG101','Anglais Technique',2,'18.00','VALIDÉE'],
-                ['2023-INF-016','Ibrahima DIALLO','UE INF306','Sécurité',3,'20.00','VALIDÉE'],
-                ['2023-INF-017','Khady GUEYE','UE INF305','Réseaux',3,'05.00','ANOMALIE'],
-                ['2023-INF-018','Ousmane SECK','UE PROJ30','Projet Tutoré',5,'14.00','À VALIDER'],
-                ['2023-INF-019','Marième CISSE','UE INF308','Systèmes',3,'12.50','VALIDÉE'],
-                ['2023-INF-020','Abdoulaye SOW','UE INF309','IA',4,'17.25','VALIDÉE'],
-              ];
+              
             @endphp
 
-            @foreach($rows as $r)
+            @foreach($notes as $note)
               @php
-                [$mat,$etu,$ue,$matier,$coef,$note,$stat] = $r;
-
+                $stat = 'VALIDÉE';
                 $badge = 'bg-green-100 text-green-700 border-green-200';
                 if ($stat === 'À VALIDER') $badge = 'bg-orange-100 text-orange-700 border-orange-200';
                 if ($stat === 'ANOMALIE') $badge = 'bg-red-100 text-red-700 border-red-200';
 
                 $noteColor = 'text-green-600';
-                if ((float)$note < 10) $noteColor = 'text-orange-600';
+                if ((float)$note->note < 10) $noteColor = 'text-orange-600';
                 if ($stat === 'ANOMALIE') $noteColor = 'text-red-600';
               @endphp
 
               <tr class="border-b border-[#e7ebf3] dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors">
-                <td class="px-5 py-4 font-mono text-xs text-[#4c669a] dark:text-gray-400">{{ $mat }}</td>
-                <td class="px-5 py-4 font-semibold">{{ $etu }}</td>
-                <td class="px-5 py-4 text-xs font-medium text-[#4c669a] dark:text-gray-400">{{ $ue }}</td>
-                <td class="px-5 py-4">{{ $matier }}</td>
-                <td class="px-5 py-4 text-right">{{ $coef }}</td>
-                <td class="px-5 py-4 text-right font-bold {{ $noteColor }}">{{ $note }}</td>
+                <td class="px-5 py-4 font-mono text-xs text-[#4c669a] dark:text-gray-400">{{ $note->etudiant->matricule }}</td>
+                <td class="px-5 py-4 font-semibold">{{ $note->etudiant->prenom }} {{ $note->etudiant->nom }}</td>
+                <td class="px-5 py-4 text-xs font-medium text-[#4c669a] dark:text-gray-400">UE INF305</td>
+                <td class="px-5 py-4">{{ $note->module }}</td>
+                <td class="px-5 py-4 text-right">1</td>
+                <td class="px-5 py-4 text-right font-bold {{ $noteColor }}">{{ $note->note }}</td>
                 <td class="px-5 py-4">
                   <span class="text-xs font-semibold px-2 py-1 rounded-full border {{ $badge }}">
                     {{ $stat }}
@@ -220,6 +197,7 @@
                   </div>
                 </td>
               </tr>
+
             @endforeach
           </tbody>
         </table>
@@ -229,18 +207,12 @@
       <div class="p-4 border-t border-[#e7ebf3] dark:border-gray-700 flex flex-col sm:flex-row items-center justify-between gap-3">
         <p class="text-sm text-[#4c669a] dark:text-gray-400">Affichage : 1–20 sur 742</p>
         <div class="flex items-center gap-2">
-          <button class="px-3 py-2 rounded-lg border border-[#e7ebf3] dark:border-gray-700 bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors text-sm">
-            Précédent
+         
+          <button class="px-3 py-2 rounded-lg text-white text-sm font-bold hover:bg-white-700 transition-colors">
+            {{$notes->links()}}
           </button>
-          <button class="px-3 py-2 rounded-lg bg-primary text-white text-sm font-bold hover:bg-blue-700 transition-colors">
-            1
-          </button>
-          <button class="px-3 py-2 rounded-lg border border-[#e7ebf3] dark:border-gray-700 bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors text-sm">
-            2
-          </button>
-          <button class="px-3 py-2 rounded-lg border border-[#e7ebf3] dark:border-gray-700 bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors text-sm">
-            Suivant
-          </button>
+          
+          
         </div>
       </div>
     </div>
