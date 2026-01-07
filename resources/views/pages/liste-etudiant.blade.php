@@ -17,11 +17,13 @@
         Liste des inscriptions académiques.
       </p>
     </div>
-
-    <button class="flex items-center gap-2 px-4 py-2 bg-primary text-white rounded-lg hover:bg-blue-700 shadow-md shadow-blue-500/20">
+    <a href="{{ route('etudiant') }}">
+      <button class="flex items-center gap-2 px-4 py-2 bg-primary text-white rounded-lg hover:bg-blue-700 shadow-md shadow-blue-500/20">
       <span class="material-symbols-outlined text-[20px]">add</span>
       <span class="text-sm font-bold">Ajouter un Etudiant</span>
     </button>
+    </a>
+    
   </div>
 
   <!-- Table -->

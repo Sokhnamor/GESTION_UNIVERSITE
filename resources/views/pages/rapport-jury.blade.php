@@ -17,11 +17,12 @@
         Liste des inscriptions académiques.
       </p>
     </div>
-
-    <button class="flex items-center gap-2 px-4 py-2 bg-primary text-white rounded-lg hover:bg-blue-700 shadow-md shadow-blue-500/20">
-      <span class="material-symbols-outlined text-[20px]">add</span>
-      <span class="text-sm font-bold">Ajouter un Nouveau Jury</span>
-    </button>
+     <a href="{{ route('jury') }}">
+       <button class="flex items-center gap-2 px-4 py-2 bg-primary text-white rounded-lg hover:bg-blue-700 shadow-md shadow-blue-500/20">
+        <span class="material-symbols-outlined text-[20px]">add</span>
+        <span class="text-sm font-bold">Ajouter un Nouveau Jury</span>
+      </button>
+     </a>
   </div>
 
   <!-- Table -->
@@ -54,7 +55,7 @@
             <td class="px-5 py-3 text-sm text-[#0d121b] dark:text-white">{{ $jury->promotion }}</td>
             <td class="px-5 py-3 text-sm text-[#0d121b] dark:text-white">{{ $jury->semestre }}</td>
             <td class="px-5 py-3 text-sm text-[#0d121b] dark:text-white">{{ $jury->session }}</td>
-            <td class="px-5 py-3 text-sm text-[#0d121b] dark:text-white">{{ $jury->annee_academique }}</td>
+            <td class="px-5 py-3 text-sm text-[#0d121b] dark:text-white">{{ $jury->annee_academique}}</td>
             <td class="px-5 py-3 text-sm text-[#0d121b] dark:text-white">{{ $jury->date }}</td>
             <td class="px-5 py-3 text-sm text-[#0d121b] dark:text-white">{{ $jury->statut }}</td>
             <td class="px-5 py-3 text-sm text-[#0d121b] dark:text-white">{{ $jury->president }}</td>
